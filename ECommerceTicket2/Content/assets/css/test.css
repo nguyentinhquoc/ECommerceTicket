@@ -1,0 +1,397 @@
+﻿.w-min-max {
+    min-width: max-content;
+}
+/*  */
+@media screen and (min-width: 1025px) {
+    section {
+        margin: 40px 80px;
+    }
+}
+
+@media screen and (max-width: 1410px) and (min-width: 1025px) {
+    section {
+        margin: 40px 20px;
+    }
+
+    .infor-hanhlykyguiHeader {
+        gap: 90px;
+        justify-content: space-evenly;
+        margin-left: 0px;
+    }
+}
+
+.hanhkhach {
+    text-align: start;
+}
+/* Tablet */
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+    .banner > img {
+        height: calc(100vh - 100px);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .header__menu--chung.filght__banner {
+        display: none;
+    }
+
+    .header__menu--chung {
+        display: none;
+    }
+
+    nav > .menu {
+        display: none;
+    }
+
+    .logo__table__mobile--menu {
+        display: flex;
+        align-items: center;
+        margin-left: 28px;
+        height: 47px;
+    }
+
+    .container__respon {
+        margin: 0 auto;
+    }
+
+    header > .header__logo {
+        margin-left: 20px;
+    }
+
+    .footer__widgets {
+        padding: 30px 80px;
+    }
+
+    .footer__copyright {
+        flex-wrap: wrap;
+        padding: 10px 50px;
+    }
+    /*  */
+    div.footer__copyright-links {
+        flex-wrap: wrap;
+    }
+
+    .respon__table--grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(45%, 1fr));
+        gap: 20px 20px;
+    }
+    /*  */
+    .flight {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .flight-right,
+    .flight-left {
+        width: 100%;
+    }
+
+    .container-pay {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(53px, 1fr));
+        gap: 20px 20px;
+    }
+
+    .vanphonguyquyen,
+    .quacongthanhtoan {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 970px) and (min-width: 601px) {
+    section {
+        margin: 40px 10px;
+    }
+
+    .banner > img {
+        height: calc(100vh - 100px);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    header > .header__logo {
+        margin-left: 10px;
+    }
+
+    .footer__widgets {
+        padding: 30px 10px;
+    }
+
+    .footer__copyright {
+        flex-wrap: wrap;
+        padding: 10px 10px;
+    }
+
+    .respon__table--grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(45%, 1fr));
+        gap: 20px 20px;
+    }
+    /*  */
+    /* .text-danger,
+  .text-primary {
+    min-width: max-content;
+  } */
+    .vemaybay div,
+    .vemaybay > .text-danger,
+    .vemaybay > .text-info,
+    .vemaybay span,
+    .vemaybay > .text-primary {
+        font-size: clamp(10px, 2vw, 16px) !important;
+    }
+
+    .vemaybay h4 {
+        font-size: clamp(18px, 2vw, 22px) !important;
+    }
+
+    .px-30 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .lichdiss__conten > div:first-child > div > img {
+        width: 30px !important;
+        height: 30px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .lichdiss__conten {
+        gap: 10px;
+    }
+
+    .flight-card {
+        padding: 16px 10px;
+    }
+
+    .giabannguoilon {
+        display: none;
+    }
+
+    .flight-info_2 {
+        margin-top: 20px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .respon__table--grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(45%, 1fr));
+        gap: 20px 20px;
+    }
+
+    .header__user-ticket {
+        width: max-content;
+    }
+
+    .banner > img {
+        height: calc(100vh - 100px);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    section {
+        margin: 40px 20px;
+    }
+    /* Style for mobile */
+    .header__menu--chung {
+        display: none;
+    }
+
+    nav > .menu {
+        display: none;
+    }
+
+    .logo__table__mobile--menu {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        height: 47px;
+    }
+
+    .container__respon {
+        margin: 0 auto;
+    }
+
+    header > .header__logo {
+        margin-left: 10px;
+    }
+
+    .nav--numberPhone > span {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .footer__widgets {
+        padding: 30px 20px;
+    }
+
+    .footer__copyright {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    /*  */
+    .flight {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .flight-right,
+    .flight-left {
+        width: 100%;
+    }
+    /*  */
+    .container-pay {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(53px, 1fr));
+        gap: 20px 20px;
+    }
+
+    .pay-thanhtoan {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .vanphonguyquyen,
+    .quacongthanhtoan {
+        display: none;
+    }
+    /*  */
+
+    .vemaybay div,
+    .vemaybay > .text-danger,
+    .vemaybay > .text-info,
+    .vemaybay span,
+    .vemaybay > .text-primary {
+        font-size: clamp(10px, 2vw, 19px) !important;
+    }
+
+    .vemaybay h4 {
+        font-size: clamp(24px, 2vw, 27px) !important;
+    }
+
+    .px-30 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .lichdiss__conten > div:first-child > div > img {
+        width: 30px !important;
+        height: 30px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .lichdiss__conten {
+        gap: 10px;
+    }
+
+    .wrapber {
+        display: grid;
+        grid-template-areas:
+            "header header chuyenbay chuyenbay"
+            "logo logo logo logo";
+    }
+
+    .price-info {
+        grid-area: logo;
+        display: flex;
+        margin-left: 20px;
+    }
+
+    .time-info {
+        grid-area: chuyenbay;
+    }
+
+    .airline {
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        justify-self: center;
+    }
+    /*  */
+
+    .actions {
+        align-items: center;
+        gap: 20px;
+        /* padding-right: 20px; */
+    }
+
+        .actions > button {
+            width: 60px;
+            font-size: 12px;
+            height: 35px;
+        }
+    /*  */
+    .flight-card {
+        padding: 16px 10px;
+    }
+
+    .giabannguoilon {
+        display: none;
+    }
+
+    .flight-info_2 {
+        margin-top: 20px;
+    }
+
+    .roud_way,
+    .hangbay,
+    .hangve {
+        display: none;
+    }
+
+    .button_detail {
+        width: max-content;
+    }
+
+    .spam_text {
+        gap: 20px;
+    }
+
+    .w158px {
+        width: 0;
+    }
+
+    .logo-flight {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.time-info-mobile {
+    align-items: center;
+    gap: 20px;
+}
+
+.details {
+    display: block;
+}
+
+.price_vat {
+    gap: 20px;
+    width: max-content;
+}
+
+.details > div {
+    flex-wrap: wrap;
+    gap: 20px;
+    /* justify-content: space-between; */
+    padding: 10px;
+}
+
+.two_item_dev > div:first-child {
+    display: flex;
+    gap: 20px;
+    /* margin-bottom: 10px; */
+}
+
+.two_item_dev > div:last-child {
+    display: flex;
+    gap: 20px;
+    line-height: 2;
+}
+
