@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SkytourModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SkytourEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Airline" EntityType="SkytourModel.Airline" />
+    <EntitySet Name="AirlineTopupBalance" EntityType="SkytourModel.AirlineTopupBalance" />
+    <EntitySet Name="Airport" EntityType="SkytourModel.Airport" />
+    <EntitySet Name="DomesticRoute" EntityType="SkytourModel.DomesticRoute" />
+    <EntitySet Name="OrderFlight" EntityType="SkytourModel.OrderFlight" />
+  </EntityContainer>
+  <EntityType Name="Airline">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AirlineCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="AirlineCodeICAO" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="AirlineName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IsAutoSuggest" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AirlineTopupBalance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="VJAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BLAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeUpdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Airport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AirportCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CityName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CountryName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="CountryPriority" Type="Int32" />
+    <Property Name="StateCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="AirportNameEN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="AirportNameVN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SuggestNormal" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="SuggestNormalVN" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="SuggestMobile" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="IsAutoSuggest" Type="Boolean" />
+    <Property Name="IsMainAirport" Type="Boolean" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="OrderDisplay" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DomesticRoute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartureAirport" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="ArrivalAirport" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="IsVN" Type="Boolean" />
+    <Property Name="IsBL" Type="Boolean" />
+    <Property Name="IsVD" Type="Boolean" />
+    <Property Name="IsInternational" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="OrderFlight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" />
+    <Property Name="OrderCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="OrderStatus" Type="Byte" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="ProcessedBy" Type="Int32" />
+    <Property Name="Triptype" Type="Byte" />
+    <Property Name="ItineraryDesc" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMethod" Type="Byte" />
+    <Property Name="TotalAdult" Type="Byte" />
+    <Property Name="TotalChild" Type="Byte" />
+    <Property Name="TotalInfant" Type="Byte" />
+    <Property Name="TotalBasePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotalTaxAndFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotalAddOnFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotalServiceFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Commission" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PriceNote" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="OptionGetBetterFare" Type="Byte" />
+    <Property Name="TotalDiscount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SessionId" Type="Int32" />
+    <Property Name="Supplier" Type="Byte" />
+    <Property Name="KeepSeat15minStatus" Type="Byte" />
+    <Property Name="SessionIdGDS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateTimeKeepSeat" Type="DateTime" Precision="3" />
+    <Property Name="PnrFake" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PnrKeepStatus" Type="Byte" />
+    <Property Name="DateTimeCreatePnr" Type="DateTime" Precision="3" />
+    <Property Name="IsShowFlagSNB" Type="Boolean" />
+    <Property Name="NoFlagSNB" Type="Int32" />
+    <Property Name="IsShowFlagTML" Type="Boolean" />
+    <Property Name="OtherFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PNRNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Enviroment" Type="Byte" />
+    <Property Name="IsRoundTrip" Type="Boolean" />
+    <Property Name="DepartureAirport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ArrivalAirport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DepartureDate" Type="DateTime" Precision="3" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+    <Property Name="DepartureCity" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ArrivalCity" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendationNumber" Type="Int32" />
+    <Property Name="OutBoundRefNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InBoundRefNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Adult" Type="Byte" />
+    <Property Name="Child" Type="Byte" />
+    <Property Name="Infant" Type="Byte" />
+    <Property Name="IsIssuedEticket" Type="Boolean" />
+    <Property Name="TicketClass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AirlineCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AirlineCodeInBound" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

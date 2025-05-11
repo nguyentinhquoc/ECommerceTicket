@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SkytourModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Airline">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AirlineCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="AirlineCodeICAO" Type="nvarchar" MaxLength="5" />
+    <Property Name="AirlineName" Type="nvarchar" MaxLength="250" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="Website" Type="nvarchar" MaxLength="250" />
+    <Property Name="IsAutoSuggest" Type="bit" />
+  </EntityType>
+  <EntityType Name="AirlineTopupBalance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="VJAccount" Type="nvarchar" MaxLength="50" />
+    <Property Name="BLAccount" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Airport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AirportCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="CityCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="350" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="350" />
+    <Property Name="CountryPriority" Type="int" />
+    <Property Name="StateCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="AirportNameEN" Type="nvarchar" MaxLength="250" />
+    <Property Name="AirportNameVN" Type="nvarchar" MaxLength="250" />
+    <Property Name="SuggestNormal" Type="nvarchar" MaxLength="350" />
+    <Property Name="SuggestNormalVN" Type="nvarchar" MaxLength="350" />
+    <Property Name="SuggestMobile" Type="nvarchar" MaxLength="350" />
+    <Property Name="IsAutoSuggest" Type="bit" />
+    <Property Name="IsMainAirport" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="OrderDisplay" Type="int" />
+  </EntityType>
+  <EntityType Name="DomesticRoute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartureAirport" Type="nvarchar" MaxLength="5" />
+    <Property Name="ArrivalAirport" Type="nvarchar" MaxLength="5" />
+    <Property Name="IsVN" Type="bit" />
+    <Property Name="IsBL" Type="bit" />
+    <Property Name="IsVD" Type="bit" />
+    <Property Name="IsInternational" Type="bit" />
+  </EntityType>
+  <EntityType Name="OrderFlight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="OrderCode" Type="nvarchar" MaxLength="250" />
+    <Property Name="OrderStatus" Type="tinyint" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="ProcessedBy" Type="int" />
+    <Property Name="Triptype" Type="tinyint" />
+    <Property Name="ItineraryDesc" Type="nvarchar" MaxLength="250" />
+    <Property Name="PaymentMethod" Type="tinyint" />
+    <Property Name="TotalAdult" Type="tinyint" />
+    <Property Name="TotalChild" Type="tinyint" />
+    <Property Name="TotalInfant" Type="tinyint" />
+    <Property Name="TotalBasePrice" Type="money" />
+    <Property Name="TotalTaxAndFee" Type="money" />
+    <Property Name="TotalAddOnFee" Type="money" />
+    <Property Name="TotalServiceFee" Type="money" />
+    <Property Name="Commission" Type="money" />
+    <Property Name="TotalPrice" Type="money" />
+    <Property Name="Balance" Type="money" />
+    <Property Name="PriceNote" Type="nvarchar" MaxLength="500" />
+    <Property Name="OptionGetBetterFare" Type="tinyint" />
+    <Property Name="TotalDiscount" Type="money" />
+    <Property Name="SessionId" Type="int" />
+    <Property Name="Supplier" Type="tinyint" />
+    <Property Name="KeepSeat15minStatus" Type="tinyint" />
+    <Property Name="SessionIdGDS" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateTimeKeepSeat" Type="datetime" />
+    <Property Name="PnrFake" Type="nvarchar" MaxLength="50" />
+    <Property Name="PnrKeepStatus" Type="tinyint" />
+    <Property Name="DateTimeCreatePnr" Type="datetime" />
+    <Property Name="IsShowFlagSNB" Type="bit" />
+    <Property Name="NoFlagSNB" Type="int" />
+    <Property Name="IsShowFlagTML" Type="bit" />
+    <Property Name="OtherFee" Type="money" />
+    <Property Name="PNRNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Enviroment" Type="tinyint" />
+    <Property Name="IsRoundTrip" Type="bit" />
+    <Property Name="DepartureAirport" Type="nvarchar" MaxLength="50" />
+    <Property Name="ArrivalAirport" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepartureDate" Type="datetime" />
+    <Property Name="ReturnDate" Type="datetime" />
+    <Property Name="DepartureCity" Type="nvarchar" MaxLength="250" />
+    <Property Name="ArrivalCity" Type="nvarchar" MaxLength="250" />
+    <Property Name="RecommendationNumber" Type="int" />
+    <Property Name="OutBoundRefNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="InBoundRefNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Adult" Type="tinyint" />
+    <Property Name="Child" Type="tinyint" />
+    <Property Name="Infant" Type="tinyint" />
+    <Property Name="IsIssuedEticket" Type="bit" />
+    <Property Name="TicketClass" Type="nvarchar" MaxLength="20" />
+    <Property Name="AirlineCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="AirlineCodeInBound" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="SkytourModelStoreContainer">
+    <EntitySet Name="Airline" EntityType="Self.Airline" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AirlineTopupBalance" EntityType="Self.AirlineTopupBalance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Airport" EntityType="Self.Airport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DomesticRoute" EntityType="Self.DomesticRoute" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderFlight" EntityType="Self.OrderFlight" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

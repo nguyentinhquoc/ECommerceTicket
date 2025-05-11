@@ -1,0 +1,694 @@
+﻿@{
+    ViewData["Title"] = "Flight";
+}
+@section Styles {
+    <link href="~/Content/assets/css/flight-list-2.css" rel="stylesheet" />
+}
+<div class="header__menu--chung">
+    <div class="banner">
+
+        <form class=" form form__chung ">
+            <div class="form__left">
+                <div class="form__flight-types">
+                    <div class="form__flight-type">
+                        <input type="radio" id="one-way" name="flight-type" class="form__checkbox" checked />
+                        <label for="one-way" class="form__label b uppercase-text">Một chiều</label>
+                    </div>
+                    <div class="form__flight-type">
+                        <input type="radio" id="round-trip" name="flight-type" class="form__checkbox khuhoiinput" />
+                        <label for="round-trip" class="form__label  b uppercase-text">Khứ hồi</label>
+                    </div>
+                    <div class="form__flight-type">
+                        <input type="radio" id="multi-city" name="flight-type" class="form__checkbox nhieuchanginput" />
+                        <label for="multi-city" class="form__label  b uppercase-text">Nhiều chặng</label>
+                    </div>
+                </div>
+                <div class="addThemFormLeft">
+                    <div class="journey-form journey-form-location btm ">
+                        <div class="journey-box journey-box--departure  b uppercase-text">
+                            <label for="departure" class="d-flex al-center">
+                                <img src="assets/svg/icons/plane_search.svg"
+                                     alt="">Điểm đi:
+                            </label>
+                            <p class="location-span">Ha Noi</p>
+                        </div>
+                        <div class="icon-togle">
+                            <div class="khuhoi khuhoihienthiimg">
+                                <img src="assets/svg/icons/round-trip.svg" alt="">
+                            </div>
+                            <img id="khuhoiimgnone" src="./assets/svg/motchieu.svg" alt="">
+                        </div>
+                        <div class="journey-box journey-box--destination  b uppercase-text">
+                            <label for="destination" class="d-flex al-center">
+                                <img src="assets/svg/icons/map_search.svg"
+                                     alt="">Điểm
+                                đến:
+                            </label>
+                            <p class="location-span">Ho Chi Minh</p>
+                        </div>
+                    </div>
+                    <div class="journey-form journey-form-location btm addthemright2 ">
+                        <div class="journey-box journey-box--departure  b uppercase-text">
+                            <label for="departure" class="d-flex al-center">
+                                <img src="assets/svg/icons/plane_search.svg"
+                                     alt="">Điểm đi:
+                            </label>
+                            <p class="location-span">Ha Noi</p>
+                        </div>
+                        <div class="icon-togle">
+                            <div class="khuhoi khuhoihienthiimg">
+                                <img src="assets/svg/icons/round-trip.svg" alt="">
+                            </div>
+                            <img id="khuhoiimgnone" src="./assets/svg/motchieu.svg" alt="">
+                        </div>
+                        <div class="journey-box journey-box--destination  b uppercase-text">
+                            <label for="destination" class="d-flex al-center">
+                                <img src="assets/svg/icons/map_search.svg"
+                                     alt="">Điểm
+                                đến:
+                            </label>
+                            <p class="location-span">Ho Chi Minh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex add__Changduong">
+                    <span class="">+</span>
+                    <p>THÊM CHUYẾN BAY</p>
+                </div>
+            </div>
+            <div class="form__right">
+                <div>
+                    <div class="form__flight-info ">
+                        <select name="class" id="flight-class">
+                            <option value="economy">Hạng: Phổ thông</option>
+                            <option value="business">Hạng: Thương gia</option>
+                            <option value="first">Hạng: Hạng nhất</option>
+                        </select>
+                        <select name="promo" id="promo-code">
+                            <option value="">Mã khuyến mãi</option>
+                            <option value="PROMO1">PROMO1</option>
+                            <option value="PROMO2">PROMO2</option>
+                            <option value="PROMO3">PROMO3</option>
+                        </select>
+                    </div>
+                    <div class="addthemFormRight">
+                        <div class="journey-form btm">
+                            <div class="journey-box journey-box--date journey-date--departure b ">
+                                <label for="departure-date" class="d-flex al-center">
+                                    <img src="assets/svg/icons/date_search.svg"
+                                         alt="">Ngày
+                                    đi
+                                </label>
+                                <div><input type="date" id="departure-date"></div>
+                            </div>
+                            <div class="journey-box journey-box--date journey-date--return b khuhoi khuhoihienthidate">
+                                <label for="return-date " class="d-flex al-center">
+                                    <img src="assets/svg/icons/date_search.svg"
+                                         alt="">Ngày
+                                    về
+                                </label>
+                                <div> <input type="date" id="return-date"></div>
+                            </div>
+                            <div class="journey-box journey-box--customer">
+                                <label for="date" class="d-flex al-center">
+                                    <img src="assets/svg/icons/user_search.svg" alt=""> Hành
+                                    Khách
+                                </label>
+
+                                <div class="mt-5">
+                                    <u>
+                                        <span class="b">1</span> Người lớn, <span class="b">1</span> trẻ em, <span class="b">1</span>
+                                        em
+                                        bé
+                                    </u>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="journey-form btm addthemright2">
+                            <div class="journey-box journey-box--date journey-date--departure b ">
+                                <label for="departure-date">
+                                    <img src="assets/svg/icons/date_search.svg" alt="">Ngày
+                                    đi
+                                </label><br>
+                                <input type="date" id="departure-date">
+                            </div>
+                            <div class="journey-box journey-box--date journey-date--return b khuhoi khuhoihienthidate">
+                                <label for="return-date">
+                                    <img src="assets/svg/icons/date_search.svg" alt="">Ngày
+                                    về
+                                </label><br>
+                                <input type="date" id="return-date">
+                            </div>
+                            <div class="journey-box journey-box--customer">
+                                <label for="date">
+                                    <img src="assets/svg/icons/user_search.svg" alt=""> Hành Khách
+                                </label>
+                                <br>
+                                <u>
+                                    <span class="b">1</span> Người lớn, <span class="b">1</span> trẻ em, <span class="b">1</span> em
+                                    bé
+                                </u>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class=" journey-box--submit b">SUBMIT</button>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<div class="content" style="margin-top: 50px">
+    <section>
+        <div class="flight-right-heading d-flex justify-content-between">
+            <div>
+                <div class="text-primary">Danh sách chuyến bay</div>
+                <p class="text-info">
+                    Giá vé chưa bao gồm thuế và các loại phí khác, quý khách lưu ý chọn chi tiết để xem đầy đủ
+                </p>
+            </div>
+
+
+        </div>
+    </section>
+    <section>
+        <div class="flight d-flex justify-content-between">
+            <div class="flight-left">
+                <div class="menu-flight padding-15">
+                    <div class="d-flex justify-content-between">
+                        <h6 class="text-primary">BỘ LỌC</h6>
+                        <span><img src="./assets/svg/icons/Flight-list/menu-seting.svg" alt="" /></span>
+                    </div>
+
+                    <div class="menu-section">
+                        <div class="toggle-menu text-info d-flex justify-content-between" data-target="#menu-stk">
+                            <h6 class="text-info">Sắp xếp</h6>
+                            <div>
+                                <img src="./assets/svg/icons/Flight-list/drop-button.svg" alt="" />
+                            </div>
+                        </div>
+                        <ul class="list-none-style hidden" id="menu-stk">
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="stk-1" />
+                                <label class="text-primary" for="stk-1">Giá (Từ thấp tới cao)</label>
+                            </li>
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="stk-2" />
+                                <label class="text-primary" for="stk-2">Giá cất cánh (Sớm đến muộn)</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-section">
+                        <div data-target="#menu-skdl" class="toggle-menu text-info d-flex justify-content-between">
+                            <h6 class="text-info">Lọc theo giá vé</h6>
+                            <div>
+                                <img src="./assets/svg/icons/Flight-list/drop-button.svg" alt="" />
+                            </div>
+                        </div>
+                        <ul class="list-none-style hidden" id="menu-skdl">
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-1" />
+                                <label class="text-primary" for="skdl-1">Giá chưa bao gồm thuế phí</label>
+                            </li>
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-2" />
+                                <label class="text-primary" for="skdl-2">Giá full thuế phí cho 1 người lớn</label>
+                            </li>
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-3" />
+                                <label class="text-primary" for="skdl-3">Tổng giá cho tất cả hành khách</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-section">
+                        <div data-target="#menu-skdl_1" class="toggle-menu text-info d-flex justify-content-between">
+                            <h6 class="text-info">Lọc hãng hàng không</h6>
+                            <div>
+                                <img src="./assets/svg/icons/Flight-list/drop-button.svg" alt="" />
+                            </div>
+                        </div>
+                        <ul class="list-none-style hidden" id="menu-skdl_1">
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-1" />
+                                <div class="title_div">
+                                    <label class="text-primary" for="skdl-1">
+                                        VietJet Air
+                                    </label>
+                                    <img class="logo-flight" src="./assets/svg/icons/Flight-list/vietjet.svg" alt="" />
+                                </div>
+                            </li>
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-1" />
+                                <div class="title_div">
+                                    <label class="text-primary" for="skdl-1">
+                                        VietJet Air
+                                    </label>
+                                    <img class="logo-flight" src="./assets/svg/icons/Flight-list/vietjet.svg" alt="" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-section">
+                        <div data-target="#menu-skdl_2" class="toggle-menu text-info d-flex justify-content-between">
+                            <h6 class="text-info">Giờ cất cánh chiều đi</h6>
+                            <div>
+                                <img src="./assets/svg/icons/Flight-list/drop-button.svg" alt="" />
+                            </div>
+                        </div>
+                        <ul class="list-none-style hidden" id="menu-skdl_2">
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-1" />
+                                <div class="title_div">
+                                    <label class="text-primary" for="skdl-1">Cả ngày</label>
+                                    <label class="text-primary" for="skdl-1">00:00 - 24:00</label>
+                                </div>
+                            </li>
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-1" />
+                                <div class="title_div">
+                                    <label class="text-primary" for="skdl-1">Buổi sớm</label>
+                                    <label class="text-primary" for="skdl-1">00:00 - 06:00</label>
+                                </div>
+                            </li>
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-1" />
+                                <div class="title_div">
+                                    <label class="text-primary" for="skdl-1">Buổi sáng</label>
+                                    <label class="text-primary" for="skdl-1">06:00 - 12:00</label>
+                                </div>
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-1" />
+                                <div class="title_div">
+                                    <label class="text-primary" for="skdl-1">Buổi chiều</label>
+                                    <label class="text-primary" for="skdl-1">12:00 - 18:00</label>
+                                </div>
+                            </li>
+                            <li>
+                                <input class="btn-checkbox" type="checkbox" id="skdl-1" />
+                                <div class="title_div">
+                                    <label class="text-primary" for="skdl-1">Buổi tối</label>
+                                    <label class="text-primary" for="skdl-1">18:00 - 24:00</label>
+                                </div>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flight-right">
+                <div class="flight-card_1 mt-50">
+                    <div class="flight-info_1 vemaybay">
+                        <div class="grid_flight_time_titile">
+                            <div class="roule">
+                                <div class="flight-code_1">CHIỀU VỀ</div>
+                                <div class="flight-code_2">NGÀY 16/02/2023</div>
+                            </div>
+
+                            <div class="time-info_1">
+                                <div class="flight-code_1 w-min-max">(HỒ CHÍ MINH -> HÀ NỘI)</div>
+                                <div class="flight-code_2">1 NGƯỜI LỚN | 1 TRẺ EM | 1 EM BÉ</div>
+                            </div>
+                        </div>
+                        <div class="price-info d-flex gap-10 justify-content-between">
+                            <div class="actions">
+                                <button class="change-btn w-min-max">Thay đổi</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_content">
+                    <article class="news__column-1 text-primary  box-shadow">
+                        <div class="news__heading d-flex justify-content-start">
+                            <span class="text-uppercase cursor btn-new-application active d-flex justify-content-between">
+                                <div>
+                                    <h6 class="title_price">Giá rẻ nhất</h6>
+                                    <h5 class="title_price_">37,580,000đ</h5>
+                                    <h6 class="time_price">10h 50m (Avg)</h6>
+                                </div>
+                                <img class="img_price"
+                                     src="https://s3-alpha-sig.figma.com/img/30d9/bfe4/b3af933d52e2b20f14ab04998ab5e02f?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eJEk-SL0sYJxMiE2Flk63M3Cb7CX-ZXw1cmNLWLjg-j8haL7~XINIUJAeHoBgIv7ABmgms0WlxO0-Db18q9P9uO~WQ8NopD4ZyvB7H0goxk2ymXg~nBaB-qaC20jc0PLpAlqZ4C2BMOIJ6Uft7OLeHxuHoXSy1uKYHl-FpfitegGpQq0hxyl5LJjhC4vWKyCqbKtmGAENl2CitAOcgBTo4L8Fl2fJxTppd4fDPfizNkbiUNLzhicyZ-XoaxWL38TmOvWr4QewwBCTCB4LVFZhNAIlMp3OA0mhL~zovEi5yD9WHXG0YcIsixwKQ3gwmp2xnO~T1w2FfHcaNOcUQGQeQ__"
+                                     alt="">
+                            </span>
+                            <span class="text-uppercase cursor btn-cheap-price d-flex justify-content-between">
+                                <div>
+                                    <h6 class="title_price">Giá rẻ nhất</h6>
+                                    <h5 class="title_price_">37,580,000đ</h5>
+                                    <h6 class="time_price">10h 50m (Avg)</h6>
+                                </div>
+                                <img class="img_price"
+                                     src="https://s3-alpha-sig.figma.com/img/30d9/bfe4/b3af933d52e2b20f14ab04998ab5e02f?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eJEk-SL0sYJxMiE2Flk63M3Cb7CX-ZXw1cmNLWLjg-j8haL7~XINIUJAeHoBgIv7ABmgms0WlxO0-Db18q9P9uO~WQ8NopD4ZyvB7H0goxk2ymXg~nBaB-qaC20jc0PLpAlqZ4C2BMOIJ6Uft7OLeHxuHoXSy1uKYHl-FpfitegGpQq0hxyl5LJjhC4vWKyCqbKtmGAENl2CitAOcgBTo4L8Fl2fJxTppd4fDPfizNkbiUNLzhicyZ-XoaxWL38TmOvWr4QewwBCTCB4LVFZhNAIlMp3OA0mhL~zovEi5yD9WHXG0YcIsixwKQ3gwmp2xnO~T1w2FfHcaNOcUQGQeQ__"
+                                     alt="">
+                            </span>
+
+                            <span class="text-uppercase cursor btn-cheap-price_1 d-flex justify-content-between">
+                                <div>
+                                    <h6 class="title_price">Giá rẻ nhất</h6>
+                                    <h5 class="title_price_">37,580,000đ</h5>
+                                    <h6 class="time_price">10h 50m (Avg)</h6>
+                                </div>
+                                <img class="img_price"
+                                     src="https://s3-alpha-sig.figma.com/img/30d9/bfe4/b3af933d52e2b20f14ab04998ab5e02f?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eJEk-SL0sYJxMiE2Flk63M3Cb7CX-ZXw1cmNLWLjg-j8haL7~XINIUJAeHoBgIv7ABmgms0WlxO0-Db18q9P9uO~WQ8NopD4ZyvB7H0goxk2ymXg~nBaB-qaC20jc0PLpAlqZ4C2BMOIJ6Uft7OLeHxuHoXSy1uKYHl-FpfitegGpQq0hxyl5LJjhC4vWKyCqbKtmGAENl2CitAOcgBTo4L8Fl2fJxTppd4fDPfizNkbiUNLzhicyZ-XoaxWL38TmOvWr4QewwBCTCB4LVFZhNAIlMp3OA0mhL~zovEi5yD9WHXG0YcIsixwKQ3gwmp2xnO~T1w2FfHcaNOcUQGQeQ__"
+                                     alt="">
+                            </span>
+                        </div>
+                        <div class="content ticket_card-event">
+                            <div id="new-application" class="bgc d-flex justify-content-between gap-10">
+                                <div class="flight-card_11 vemaybay  ">
+                                    <div>
+                                        <div class="flight-info_1 ">
+                                            <div class="item_1_left ">
+                                                <div class="roule d-flex justify-content-between gap-10" style="align-items: center;">
+                                                    <img class="logo-flight" src="./assets/svg/icons/Flight-list/vietjet.svg" alt="" />
+                                                    <div>
+                                                        <div class="flight-code_">VIETJET ARI</div>
+                                                        <div class="flight-code w-min-max">VJ2051 - A320</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="time-info time-info-mobile-reventip thoigiandate">
+
+                                                <div class="departure">
+                                                    <span class="time_left ">17:15</span>
+                                                    <span class="location_left ">HAN</span>
+                                                    <span class="date_left ">Thứ 5 - 04/02</span>
+                                                </div>
+                                                <img class="logo-flight" src="./assets/svg/icons/Flight-list/flight.svg" alt="" />
+                                                <div class="arrival">
+                                                    <span class="time_right">19:15</span>
+                                                    <span class="location_right">SGN</span>
+                                                    <span class="date_right">Thứ 5 - 04/02</span>
+                                                </div>
+                                            </div>
+                                            <div class="roud_way">
+                                                <div class="flight-code  w-min-max">Bay thẳng </div>
+                                                <div class="flight-code_ giobay">02h10m</div>
+                                            </div>
+                                            <div class="hangve" style="margin-bottom: 30px;">
+                                                <div class="flight-code w-min-max ">Hạng vé</div>
+                                                <div class="flight-code_ hangbay">Eco 1</div>
+                                            </div>
+
+                                            <div class="price-info thanhtoangiatien d-flex gap-10 justify-content-between">
+                                                <div class="actions">
+                                                    <div class="flight-code">3,240,000đ</div>
+                                                    <div class="flight-code_ giabannguoilon">Giá bán cho 1 người lớn</div>
+                                                    <button class="change-btn_1 w-min-max">Đặt vé</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flight-info_2 chitietsukien ">
+                                            <div class="flight-info_button ">
+                                                <button class="button_detail toggle-button">
+                                                    Chi tiết
+                                                    <img src="./assets/svg/icons/Flight-list/right.svg" alt="">
+                                                </button>
+                                            </div>
+                                            <div class="d-flex gap-20">
+                                                <div class="spam_text">
+                                                    <samp class="samp_">
+                                                        <img src="./assets/svg/icons/Flight-list/card.svg" alt="">
+                                                        <strong>07KG</strong>
+                                                    </samp>
+                                                    <samp class="samp_1">
+                                                        <img src="./assets/svg/icons/Flight-list/giff.svg" alt="">
+                                                        <strong>07KG</strong>
+                                                    </samp>
+                                                </div>
+
+                                            </div>
+                                            <div>
+                                                <select class="select_rank" name="" id="">
+                                                    <option value="">Đổi hạng vé</option>
+                                                    <option value="">Eco1</option>
+                                                    <option value="">Economy Sever Max</option>
+                                                    <option value="">Phổ thông siêu tích kiệm</option>
+                                                    <option value="">Phổ thông tích kiệm</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="details ">
+                                            <div class="d-flex">
+                                                <div class="one_item_dev">
+                                                    <li style="margin-left: 10px;"><strong>THÔNG TIN CHUYẾN BAY:</strong></li>
+                                                    <div>
+                                                        <div style="margin-left: 15px;">
+                                                            <p>
+                                                                Khởi hành: 10:10, 01/08/2023 <span class="timeDiaphuong"> (Giờ địa phương)</span>
+                                                            </p>
+                                                            <ul style="margin-left: 25px;">
+                                                                <li>Hà Nội - Sân bay Nội Bài</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div style="margin-left: 15px;">
+                                                            <p>
+                                                                Khởi hành: 12:20, 01/08/2023 <span class="timeDiaphuong">(Giờ địa phương)</span>
+                                                            </p>
+                                                            <ul style="margin-left: 25px;">
+                                                                <li>Tp.Hồ Chí Minh - Sân bay Tân Sơn Nhất</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div style="margin-left: 15px;">
+                                                            <p>Thời gian: 2 giờ 10 phút | Boeing: B787</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="two_item_dev">
+                                                    <div class="d-flex">
+                                                        <p><strong>GIÁ VÉ CHUYẾN ĐI:</strong></p>
+                                                        <p><strong>6,240,000đ</strong></p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <div class="price_vat">
+                                                            <div>
+                                                                <p style="color: #FF3C13;" class="tongsum">Hành khách x SL x Giá vé</p>
+                                                                <div>
+                                                                    <p>Nguời lớn x 2 x759,000</p>
+                                                                    <p>Trẻ em x 1 x 570,000</p>
+                                                                    <p>Em bé x 1 x 100,000</p>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <p style="color: #FF3C13;" class="tongsum">Thuế và phí</p>
+                                                                <div>
+                                                                    <p>725,000</p>
+                                                                    <p>646,000</p>
+                                                                    <p>80,000</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div>
+                                                                <p style="color: #FF3C13;" class="tongsum">Tổng tiền</p>
+                                                                <div>
+                                                                    <p>2,968,000</p>
+                                                                    <p>1,216,000</p>
+                                                                    <p>180,000</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flight-card_11 vemaybay">
+                                    <div>
+                                        <div class="flight-info_1">
+                                            <div class="item_1_left">
+                                                <div class="roule d-flex justify-content-between gap-10" style="align-items: center;">
+                                                    <img class="logo-flight" src="./assets/svg/icons/Flight-list/vietjet.svg" alt="" />
+                                                    <div>
+                                                        <div class="flight-code_">VIETJET ARI</div>
+                                                        <div class="flight-code w-min-max">VJ2051 - A320</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="time-info">
+                                                <div class="departure">
+                                                    <span class="time_left ">17:15</span>
+                                                    <span class="location_left ">HAN</span>
+                                                    <span class="date_left ">Thứ 5 - 04/02</span>
+                                                </div>
+                                                <img class="logo-flight" src="./assets/svg/icons/Flight-list/flight.svg" alt="" />
+                                                <div class="arrival">
+                                                    <span class="time_right">19:15</span>
+                                                    <span class="location_right">SGN</span>
+                                                    <span class="date_right">Thứ 5 - 04/02</span>
+                                                </div>
+                                                <div class="roud_way">
+                                                    <div class="flight-code w-min-max">Bay thẳng </div>
+                                                    <div class="flight-code_">02h10m</div>
+                                                </div>
+                                                <div class="hangve" style="margin-bottom: 30px;">
+                                                    <div class="flight-code w-min-max">Hạng vé</div>
+                                                    <div class="flight-code_">Eco 1</div>
+                                                </div>
+                                            </div>
+                                            <div class="price-info d-flex gap-10 justify-content-between">
+                                                <div class="actions">
+                                                    <div class="flight-code">3,240,000đ</div>
+                                                    <div class="flight-code_ giabannguoilon">Giá bán cho 1 người lớn</div>
+                                                    <button class="change-btn_1 w-min-max">Đặt vé</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flight-info_1">
+                                            <div class="item_1_left">
+                                                <div class="roule d-flex justify-content-between gap-10" style="align-items: center;">
+                                                    <img class="logo-flight" src="./assets/svg/icons/Flight-list/vietjet.svg" alt="" />
+                                                    <div>
+                                                        <div class="flight-code_">VIETJET ARI</div>
+                                                        <div class="flight-code w-min-max">VJ2051 - A320</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="time-info">
+                                                <div class="departure">
+                                                    <span class="time_left ">17:15</span>
+                                                    <span class="location_left ">HAN</span>
+                                                    <span class="date_left ">Thứ 5 - 04/02</span>
+                                                </div>
+                                                <img class="logo-flight" src="./assets/svg/icons/Flight-list/flight.svg" alt="" />
+                                                <div class="arrival">
+                                                    <span class="time_right">19:15</span>
+                                                    <span class="location_right">SGN</span>
+                                                    <span class="date_right">Thứ 5 - 04/02</span>
+                                                </div>
+                                                <div class="roud_way">
+                                                    <div class="flight-code w-min-max">Bay thẳng </div>
+                                                    <div class="flight-code_">02h10m</div>
+                                                </div>
+                                                <div class="hangve" style="margin-bottom: 30px;">
+                                                    <div class="flight-code w-min-max">Hạng vé</div>
+                                                    <div class="flight-code_">Eco 1</div>
+                                                </div>
+                                            </div>
+                                            <div class="price-info d-flex gap-10 justify-content-between">
+                                                <div class="actions">
+                                                    <div class="flight-code">3,240,000đ</div>
+                                                    <div class="flight-code_ giabannguoilon">Giá bán cho 1 người lớn</div>
+                                                    <button class="change-btn_1 w-min-max">Đặt vé</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flight-info_2">
+                                            <div class="flight-info_button ">
+                                                <button class="button_detail toggle-button">
+                                                    Chi tiết
+                                                    <img src="./assets/svg/icons/Flight-list/right.svg" alt="">
+                                                </button>
+                                            </div>
+                                            <div class="spam_text">
+                                                <samp class="samp_">
+                                                    <img src="./assets/svg/icons/Flight-list/card.svg" alt="">
+                                                    <strong>07KG</strong>
+                                                </samp>
+                                                <samp class="samp_1">
+                                                    <img src="./assets/svg/icons/Flight-list/giff.svg" alt="">
+                                                    <strong>07KG</strong>
+                                                </samp>
+                                            </div>
+                                            <div>
+                                                <select class="select_rank" name="" id="">
+                                                    <option value="">Đổi hạng vé</option>
+                                                    <option value="">Eco1</option>
+                                                    <option value="">Economy Sever Max</option>
+                                                    <option value="">Phổ thông siêu tích kiệm</option>
+                                                    <option value="">Phổ thông tích kiệm</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="details ">
+                                            <div class="d-flex">
+                                                <div class="one_item_dev">
+                                                    <li style="margin-left: 10px;"><strong>THÔNG TIN CHUYẾN BAY:</strong></li>
+                                                    <div>
+                                                        <div style="margin-left: 15px;">
+                                                            <p>
+                                                                Khởi hành: 10:10, 01/08/2023 <span class="timeDiaphuong"> (Giờ địa phương)</span>
+                                                            </p>
+                                                            <ul style="margin-left: 25px;">
+                                                                <li>Hà Nội - Sân bay Nội Bài</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div style="margin-left: 15px;">
+                                                            <p>
+                                                                Khởi hành: 12:20, 01/08/2023 <span class="timeDiaphuong">(Giờ địa phương)</span>
+                                                            </p>
+                                                            <ul style="margin-left: 25px;">
+                                                                <li>Tp.Hồ Chí Minh - Sân bay Tân Sơn Nhất</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div style="margin-left: 15px;">
+                                                            <p>Thời gian: 2 giờ 10 phút | Boeing: B787</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="two_item_dev">
+                                                    <div class="d-flex">
+                                                        <p><strong>GIÁ VÉ CHUYẾN ĐI:</strong></p>
+                                                        <p><strong>6,240,000đ</strong></p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <div class="price_vat">
+                                                            <div>
+                                                                <p style="color: #FF3C13;" class="tongsum">Hành khách x SL x Giá vé</p>
+                                                                <div>
+                                                                    <p>Nguời lớn x 2 x759,000</p>
+                                                                    <p>Trẻ em x 1 x 570,000</p>
+                                                                    <p>Em bé x 1 x 100,000</p>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <p style="color: #FF3C13;" class="tongsum">Thuế và phí</p>
+                                                                <div>
+                                                                    <p>725,000</p>
+                                                                    <p>646,000</p>
+                                                                    <p>80,000</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div>
+                                                                <p style="color: #FF3C13;" class="tongsum">Tổng tiền</p>
+                                                                <div>
+                                                                    <p>2,968,000</p>
+                                                                    <p>1,216,000</p>
+                                                                    <p>180,000</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="cheap-price" style="display:none" class="bgc d-flex justify-content-between gap-10">
+                            </div>
+                            <div id="cheap-price_1" style="display:none" class="bgc d-flex justify-content-between gap-10">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section Scripts {
+    <script src="~/Content/assets/js/flight-list-2.js"></script>
+}

@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SkytourModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Airline">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AirlineCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="AirlineCodeICAO" Type="nvarchar" MaxLength="5" />
+          <Property Name="AirlineName" Type="nvarchar" MaxLength="250" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="Website" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsAutoSuggest" Type="bit" />
+        </EntityType>
+        <EntityType Name="AirlineTopupBalance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="VJAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="BLAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="TimeUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Airport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AirportCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="CityCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="350" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="350" />
+          <Property Name="CountryPriority" Type="int" />
+          <Property Name="StateCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="AirportNameEN" Type="nvarchar" MaxLength="250" />
+          <Property Name="AirportNameVN" Type="nvarchar" MaxLength="250" />
+          <Property Name="SuggestNormal" Type="nvarchar" MaxLength="350" />
+          <Property Name="SuggestNormalVN" Type="nvarchar" MaxLength="350" />
+          <Property Name="SuggestMobile" Type="nvarchar" MaxLength="350" />
+          <Property Name="IsAutoSuggest" Type="bit" />
+          <Property Name="IsMainAirport" Type="bit" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="OrderDisplay" Type="int" />
+        </EntityType>
+        <EntityType Name="DomesticRoute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartureAirport" Type="nvarchar" MaxLength="5" />
+          <Property Name="ArrivalAirport" Type="nvarchar" MaxLength="5" />
+          <Property Name="IsVN" Type="bit" />
+          <Property Name="IsBL" Type="bit" />
+          <Property Name="IsVD" Type="bit" />
+          <Property Name="IsInternational" Type="bit" />
+        </EntityType>
+        <EntityType Name="OrderFlight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="OrderCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="OrderStatus" Type="tinyint" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="ProcessedBy" Type="int" />
+          <Property Name="Triptype" Type="tinyint" />
+          <Property Name="ItineraryDesc" Type="nvarchar" MaxLength="250" />
+          <Property Name="PaymentMethod" Type="tinyint" />
+          <Property Name="TotalAdult" Type="tinyint" />
+          <Property Name="TotalChild" Type="tinyint" />
+          <Property Name="TotalInfant" Type="tinyint" />
+          <Property Name="TotalBasePrice" Type="money" />
+          <Property Name="TotalTaxAndFee" Type="money" />
+          <Property Name="TotalAddOnFee" Type="money" />
+          <Property Name="TotalServiceFee" Type="money" />
+          <Property Name="Commission" Type="money" />
+          <Property Name="TotalPrice" Type="money" />
+          <Property Name="Balance" Type="money" />
+          <Property Name="PriceNote" Type="nvarchar" MaxLength="500" />
+          <Property Name="OptionGetBetterFare" Type="tinyint" />
+          <Property Name="TotalDiscount" Type="money" />
+          <Property Name="SessionId" Type="int" />
+          <Property Name="Supplier" Type="tinyint" />
+          <Property Name="KeepSeat15minStatus" Type="tinyint" />
+          <Property Name="SessionIdGDS" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateTimeKeepSeat" Type="datetime" />
+          <Property Name="PnrFake" Type="nvarchar" MaxLength="50" />
+          <Property Name="PnrKeepStatus" Type="tinyint" />
+          <Property Name="DateTimeCreatePnr" Type="datetime" />
+          <Property Name="IsShowFlagSNB" Type="bit" />
+          <Property Name="NoFlagSNB" Type="int" />
+          <Property Name="IsShowFlagTML" Type="bit" />
+          <Property Name="OtherFee" Type="money" />
+          <Property Name="PNRNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Enviroment" Type="tinyint" />
+          <Property Name="IsRoundTrip" Type="bit" />
+          <Property Name="DepartureAirport" Type="nvarchar" MaxLength="50" />
+          <Property Name="ArrivalAirport" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartureDate" Type="datetime" />
+          <Property Name="ReturnDate" Type="datetime" />
+          <Property Name="DepartureCity" Type="nvarchar" MaxLength="250" />
+          <Property Name="ArrivalCity" Type="nvarchar" MaxLength="250" />
+          <Property Name="RecommendationNumber" Type="int" />
+          <Property Name="OutBoundRefNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="InBoundRefNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="Adult" Type="tinyint" />
+          <Property Name="Child" Type="tinyint" />
+          <Property Name="Infant" Type="tinyint" />
+          <Property Name="IsIssuedEticket" Type="bit" />
+          <Property Name="TicketClass" Type="nvarchar" MaxLength="20" />
+          <Property Name="AirlineCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="AirlineCodeInBound" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="SkytourModelStoreContainer">
+          <EntitySet Name="Airline" EntityType="Self.Airline" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AirlineTopupBalance" EntityType="Self.AirlineTopupBalance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Airport" EntityType="Self.Airport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DomesticRoute" EntityType="Self.DomesticRoute" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderFlight" EntityType="Self.OrderFlight" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SkytourModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SkytourEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Airline" EntityType="SkytourModel.Airline" />
+          <EntitySet Name="AirlineTopupBalance" EntityType="SkytourModel.AirlineTopupBalance" />
+          <EntitySet Name="Airport" EntityType="SkytourModel.Airport" />
+          <EntitySet Name="DomesticRoute" EntityType="SkytourModel.DomesticRoute" />
+          <EntitySet Name="OrderFlight" EntityType="SkytourModel.OrderFlight" />
+        </EntityContainer>
+        <EntityType Name="Airline">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AirlineCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="AirlineCodeICAO" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="AirlineName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsAutoSuggest" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="AirlineTopupBalance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="VJAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BLAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeUpdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Airport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AirportCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CityCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CityName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CountryName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="CountryPriority" Type="Int32" />
+          <Property Name="StateCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="AirportNameEN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AirportNameVN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SuggestNormal" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="SuggestNormalVN" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="SuggestMobile" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="IsAutoSuggest" Type="Boolean" />
+          <Property Name="IsMainAirport" Type="Boolean" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="OrderDisplay" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DomesticRoute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartureAirport" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ArrivalAirport" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="IsVN" Type="Boolean" />
+          <Property Name="IsBL" Type="Boolean" />
+          <Property Name="IsVD" Type="Boolean" />
+          <Property Name="IsInternational" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="OrderFlight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="OrderCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OrderStatus" Type="Byte" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="ProcessedBy" Type="Int32" />
+          <Property Name="Triptype" Type="Byte" />
+          <Property Name="ItineraryDesc" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentMethod" Type="Byte" />
+          <Property Name="TotalAdult" Type="Byte" />
+          <Property Name="TotalChild" Type="Byte" />
+          <Property Name="TotalInfant" Type="Byte" />
+          <Property Name="TotalBasePrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TotalTaxAndFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TotalAddOnFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TotalServiceFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Commission" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PriceNote" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OptionGetBetterFare" Type="Byte" />
+          <Property Name="TotalDiscount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SessionId" Type="Int32" />
+          <Property Name="Supplier" Type="Byte" />
+          <Property Name="KeepSeat15minStatus" Type="Byte" />
+          <Property Name="SessionIdGDS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateTimeKeepSeat" Type="DateTime" Precision="3" />
+          <Property Name="PnrFake" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PnrKeepStatus" Type="Byte" />
+          <Property Name="DateTimeCreatePnr" Type="DateTime" Precision="3" />
+          <Property Name="IsShowFlagSNB" Type="Boolean" />
+          <Property Name="NoFlagSNB" Type="Int32" />
+          <Property Name="IsShowFlagTML" Type="Boolean" />
+          <Property Name="OtherFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PNRNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Enviroment" Type="Byte" />
+          <Property Name="IsRoundTrip" Type="Boolean" />
+          <Property Name="DepartureAirport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ArrivalAirport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartureDate" Type="DateTime" Precision="3" />
+          <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+          <Property Name="DepartureCity" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ArrivalCity" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendationNumber" Type="Int32" />
+          <Property Name="OutBoundRefNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InBoundRefNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Adult" Type="Byte" />
+          <Property Name="Child" Type="Byte" />
+          <Property Name="Infant" Type="Byte" />
+          <Property Name="IsIssuedEticket" Type="Boolean" />
+          <Property Name="TicketClass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AirlineCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="AirlineCodeInBound" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SkytourModelStoreContainer" CdmEntityContainer="SkytourEntities2">
+          <EntitySetMapping Name="Airline">
+            <EntityTypeMapping TypeName="SkytourModel.Airline">
+              <MappingFragment StoreEntitySet="Airline">
+                <ScalarProperty Name="IsAutoSuggest" ColumnName="IsAutoSuggest" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="AirlineName" ColumnName="AirlineName" />
+                <ScalarProperty Name="AirlineCodeICAO" ColumnName="AirlineCodeICAO" />
+                <ScalarProperty Name="AirlineCode" ColumnName="AirlineCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AirlineTopupBalance">
+            <EntityTypeMapping TypeName="SkytourModel.AirlineTopupBalance">
+              <MappingFragment StoreEntitySet="AirlineTopupBalance">
+                <ScalarProperty Name="TimeUpdate" ColumnName="TimeUpdate" />
+                <ScalarProperty Name="BLAccount" ColumnName="BLAccount" />
+                <ScalarProperty Name="VJAccount" ColumnName="VJAccount" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Airport">
+            <EntityTypeMapping TypeName="SkytourModel.Airport">
+              <MappingFragment StoreEntitySet="Airport">
+                <ScalarProperty Name="OrderDisplay" ColumnName="OrderDisplay" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="IsMainAirport" ColumnName="IsMainAirport" />
+                <ScalarProperty Name="IsAutoSuggest" ColumnName="IsAutoSuggest" />
+                <ScalarProperty Name="SuggestMobile" ColumnName="SuggestMobile" />
+                <ScalarProperty Name="SuggestNormalVN" ColumnName="SuggestNormalVN" />
+                <ScalarProperty Name="SuggestNormal" ColumnName="SuggestNormal" />
+                <ScalarProperty Name="AirportNameVN" ColumnName="AirportNameVN" />
+                <ScalarProperty Name="AirportNameEN" ColumnName="AirportNameEN" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="CountryPriority" ColumnName="CountryPriority" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="AirportCode" ColumnName="AirportCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DomesticRoute">
+            <EntityTypeMapping TypeName="SkytourModel.DomesticRoute">
+              <MappingFragment StoreEntitySet="DomesticRoute">
+                <ScalarProperty Name="IsInternational" ColumnName="IsInternational" />
+                <ScalarProperty Name="IsVD" ColumnName="IsVD" />
+                <ScalarProperty Name="IsBL" ColumnName="IsBL" />
+                <ScalarProperty Name="IsVN" ColumnName="IsVN" />
+                <ScalarProperty Name="ArrivalAirport" ColumnName="ArrivalAirport" />
+                <ScalarProperty Name="DepartureAirport" ColumnName="DepartureAirport" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderFlight">
+            <EntityTypeMapping TypeName="SkytourModel.OrderFlight">
+              <MappingFragment StoreEntitySet="OrderFlight">
+                <ScalarProperty Name="AirlineCodeInBound" ColumnName="AirlineCodeInBound" />
+                <ScalarProperty Name="AirlineCode" ColumnName="AirlineCode" />
+                <ScalarProperty Name="TicketClass" ColumnName="TicketClass" />
+                <ScalarProperty Name="IsIssuedEticket" ColumnName="IsIssuedEticket" />
+                <ScalarProperty Name="Infant" ColumnName="Infant" />
+                <ScalarProperty Name="Child" ColumnName="Child" />
+                <ScalarProperty Name="Adult" ColumnName="Adult" />
+                <ScalarProperty Name="InBoundRefNumber" ColumnName="InBoundRefNumber" />
+                <ScalarProperty Name="OutBoundRefNumber" ColumnName="OutBoundRefNumber" />
+                <ScalarProperty Name="RecommendationNumber" ColumnName="RecommendationNumber" />
+                <ScalarProperty Name="ArrivalCity" ColumnName="ArrivalCity" />
+                <ScalarProperty Name="DepartureCity" ColumnName="DepartureCity" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+                <ScalarProperty Name="ArrivalAirport" ColumnName="ArrivalAirport" />
+                <ScalarProperty Name="DepartureAirport" ColumnName="DepartureAirport" />
+                <ScalarProperty Name="IsRoundTrip" ColumnName="IsRoundTrip" />
+                <ScalarProperty Name="Enviroment" ColumnName="Enviroment" />
+                <ScalarProperty Name="PNRNumber" ColumnName="PNRNumber" />
+                <ScalarProperty Name="OtherFee" ColumnName="OtherFee" />
+                <ScalarProperty Name="IsShowFlagTML" ColumnName="IsShowFlagTML" />
+                <ScalarProperty Name="NoFlagSNB" ColumnName="NoFlagSNB" />
+                <ScalarProperty Name="IsShowFlagSNB" ColumnName="IsShowFlagSNB" />
+                <ScalarProperty Name="DateTimeCreatePnr" ColumnName="DateTimeCreatePnr" />
+                <ScalarProperty Name="PnrKeepStatus" ColumnName="PnrKeepStatus" />
+                <ScalarProperty Name="PnrFake" ColumnName="PnrFake" />
+                <ScalarProperty Name="DateTimeKeepSeat" ColumnName="DateTimeKeepSeat" />
+                <ScalarProperty Name="SessionIdGDS" ColumnName="SessionIdGDS" />
+                <ScalarProperty Name="KeepSeat15minStatus" ColumnName="KeepSeat15minStatus" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="TotalDiscount" ColumnName="TotalDiscount" />
+                <ScalarProperty Name="OptionGetBetterFare" ColumnName="OptionGetBetterFare" />
+                <ScalarProperty Name="PriceNote" ColumnName="PriceNote" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="Commission" ColumnName="Commission" />
+                <ScalarProperty Name="TotalServiceFee" ColumnName="TotalServiceFee" />
+                <ScalarProperty Name="TotalAddOnFee" ColumnName="TotalAddOnFee" />
+                <ScalarProperty Name="TotalTaxAndFee" ColumnName="TotalTaxAndFee" />
+                <ScalarProperty Name="TotalBasePrice" ColumnName="TotalBasePrice" />
+                <ScalarProperty Name="TotalInfant" ColumnName="TotalInfant" />
+                <ScalarProperty Name="TotalChild" ColumnName="TotalChild" />
+                <ScalarProperty Name="TotalAdult" ColumnName="TotalAdult" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="ItineraryDesc" ColumnName="ItineraryDesc" />
+                <ScalarProperty Name="Triptype" ColumnName="Triptype" />
+                <ScalarProperty Name="ProcessedBy" ColumnName="ProcessedBy" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
