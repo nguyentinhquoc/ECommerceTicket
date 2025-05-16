@@ -1,0 +1,458 @@
+﻿/* Desktop */
+.logo__table__mobile--menu {
+    display: none;
+}
+
+.colum__max--1 {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.colum__max--2 {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 1025px) {
+    section {
+        margin: 40px 80px;
+    }
+}
+
+@media screen and (max-width: 1410px) and (min-width: 1025px) {
+    section {
+        margin: 40px 20px;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+    .banner > img {
+        height: calc(100vh - 100px);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .header__menu--chung.filght__banner {
+        display: none;
+    }
+
+    nav > .menu {
+        display: none;
+    }
+
+    .logo__table__mobile--menu {
+        display: flex;
+        align-items: center;
+        margin-left: 28px;
+        height: 47px;
+    }
+
+    .container__respon {
+        margin: 0 auto;
+    }
+
+    header > .header__logo {
+        margin-left: 20px;
+    }
+
+    .respon__table {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /*  */
+    .card {
+        flex: 1;
+    }
+
+    .card-full {
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    .wrap {
+        flex-wrap: wrap;
+    }
+    /*  */
+    .news-section > article:first-child {
+        width: 100%;
+    }
+
+    .news__column-2,
+    .news__column-3 {
+        flex: 1;
+        margin-top: 50px;
+    }
+
+    .news__column-2 {
+        padding: 0 10px 0 0;
+    }
+
+    .news__column-3 {
+        padding: 0 0 0 10px;
+    }
+    /*  */
+    .respon__table--grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(45%, 1fr));
+        gap: 20px 20px;
+    }
+
+    .ticket_card-event .d-flex .card_item {
+        width: 100%;
+    }
+    /*  */
+    .agent-list-section .card_item {
+        flex: 0 0 calc(100% / 4 - 56px);
+    }
+
+    .booking-section {
+        padding: 40px 40px;
+    }
+    /* .steps-container {
+    flex-wrap: wrap;
+  } */
+    .footer__widgets {
+        padding: 30px 80px;
+    }
+
+    .footer__copyright {
+        flex-wrap: wrap;
+        padding: 10px 50px;
+    }
+    /*  */
+    div.footer__copyright-links {
+        flex-wrap: wrap;
+    }
+
+    .card_item_right.text-primary.b > h6,
+    .faq-question > span:first-child,
+    .flight-title {
+        /* height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    /* end */
+    .flight-description {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .flight-content {
+        gap: 0px;
+    }
+    /* .news__column-1 .news__heading span {
+    width: max-content;
+    padding: 0 15px;
+  } */
+    .news__column-1 .news__heading h5 {
+        width: 270px;
+    }
+
+    #new-application > .news-item {
+        width: 100%;
+    }
+
+    .news__column-1 .news-item__price {
+        display: flex;
+        line-height: 2;
+        font-size: 12px;
+        font-weight: 600;
+        align-items: center;
+        gap: 3px;
+    }
+    /*  */
+    .item_daily > .b.text-primary.uppercase-text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .best-price-flights .card {
+        flex: 0 0 calc(100% / 2 - 9.5px);
+        box-sizing: border-box;
+        text-align: center;
+        border-radius: 8px;
+    }
+}
+
+@media screen and (max-width: 970px) and (min-width: 601px) {
+    section {
+        margin: 40px 10px;
+    }
+
+    .banner > img {
+        height: calc(100vh - 100px);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    header > .header__logo {
+        margin-left: 10px;
+    }
+
+    .footer__widgets {
+        padding: 30px 10px;
+    }
+
+    .footer__copyright {
+        flex-wrap: wrap;
+        padding: 10px 10px;
+    }
+
+    .steps-container {
+        margin: 40px 10px;
+    }
+
+    .agent-list-section .card_item {
+        flex: 0 0 calc(100% / 4 - 20px);
+    }
+
+    .booking-section {
+        padding: 40px 10px;
+        min-width: max-content;
+    }
+
+    .heading > .text-uppercase.text-primary {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .heading > span.text-primary {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 40px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .header__user-ticket {
+        width: max-content;
+    }
+
+    .banner > img {
+        height: calc(100vh - 100px);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    section {
+        margin: 40px 20px;
+    }
+    /* Style for mobile */
+    .header__menu--chung.filght__banner {
+        display: none;
+    }
+
+    nav > .menu {
+        display: none;
+    }
+
+    .logo__table__mobile--menu {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        height: 47px;
+    }
+
+    .container__respon {
+        margin: 0 auto;
+    }
+
+    header > .header__logo {
+        margin-left: 10px;
+    }
+
+    .nav--numberPhone > span {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .respon__table {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /*  */
+    .steps-container {
+        margin: 40px 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card-full {
+        display: block;
+        width: 100%;
+    }
+
+    .wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    .wrap {
+        flex-wrap: wrap;
+    }
+    /*  */
+    .news-section > article:first-child {
+        width: 100%;
+    }
+
+    .news__column-2,
+    .news__column-3 {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .news__column-2 {
+        padding: 0 10px 0 0;
+    }
+
+    .news__column-3 {
+        padding: 0 0 0 10px;
+    }
+    /*  */
+    .respon__table--grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(45%, 1fr));
+        gap: 20px 20px;
+    }
+
+    .ticket_card-event .d-flex .card_item {
+        width: 100%;
+    }
+    /*  */
+    .agent-list-section .card_item {
+        flex: 0 0 calc(100% / 3 - 22px);
+    }
+
+    .booking-section {
+        padding: 40px 40px;
+        flex-wrap: wrap;
+    }
+    /* .steps-container {
+    flex-wrap: wrap;
+  } */
+    .footer__widgets {
+        padding: 30px 20px;
+    }
+
+    .footer__copyright {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    .booking-section .booking-link {
+        display: flex;
+        margin: 10px auto;
+    }
+
+    .btn__chuyendi {
+        min-width: 104px;
+    }
+    /*  */
+    div.footer__copyright-links {
+        flex-wrap: wrap;
+    }
+
+    .item_daily > .b.text-primary.uppercase-text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .step-description {
+        max-width: 100%;
+    }
+
+    .title {
+        width: 100%;
+    }
+
+    .card_item_right.text-primary.b > h6 {
+        /* height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    /*  */
+    .faq-item,
+    .flight-item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .flight-item {
+        margin-top: 15px;
+    }
+
+    .best-price-flights .card,
+    .best-price-flights .card-full:not(.card-full:first-child) {
+        box-sizing: border-box;
+        text-align: center;
+        border-radius: 8px;
+        margin-bottom: 30px;
+    }
+
+    .best-price-flights > div:first-child > div,
+    .agent-list-section > div:first-child > div {
+        width: 35%;
+    }
+
+    .news-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .news__column-1 .news__heading h5 {
+        width: 120px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .news__column-1 .news__heading span {
+        width: max-content;
+        padding: 0 15px;
+    }
+
+    .header__actions {
+        display: none;
+    }
+}

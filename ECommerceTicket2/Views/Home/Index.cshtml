@@ -1,33 +1,1798 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewData["Title"] = "Home";
+}
+@section Styles {
+    <link href="~/Content/assets/css/main.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/responsit.css" rel="stylesheet" />
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+<div class="banner relative">
+    <img src="~/Content/assets/image/Main/banner.png" alt="" />
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+    <div class="header__menu--chung filght__banner">
+        <div class="banner">
+
+            <form class=" form form__chung ">
+                <div class="form__left">
+                    <div class="form__flight-types">
+                        <div class="form__flight-type">
+                            <input type="radio" id="one-way" name="flight-type" class="form__checkbox" checked />
+                            <label for="one-way" class="form__label b uppercase-text">Một chiều</label>
+                        </div>
+                        <div class="form__flight-type">
+                            <input type="radio" id="round-trip" name="flight-type" class="form__checkbox khuhoiinput" />
+                            <label for="round-trip" class="form__label  b uppercase-text">Khứ hồi</label>
+                        </div>
+                        <div class="form__flight-type">
+                            <input type="radio" id="multi-city" name="flight-type" class="form__checkbox nhieuchanginput" />
+                            <label for="multi-city" class="form__label  b uppercase-text">Nhiều chặng</label>
+                        </div>
+                    </div>
+                    <div class="addThemFormLeft">
+                        <div class="journey-form journey-form-location btm ">
+                            <div class="journey-box journey-box--departure  b uppercase-text">
+                                <label for="departure" class="d-flex al-center">
+                                    <img src="~/Content/assets/svg/icons/plane_search.svg"
+                                         alt="">Điểm đi:
+                                </label>
+                                <p class="location-span">Ha Noi</p>
+                            </div>
+                            <div class="icon-togle">
+                                <div class="khuhoi khuhoihienthiimg">
+                                    <img src="~/Content//svg/icons/round-trip.svg" alt="">
+                                </div>
+                                <img id="khuhoiimgnone" src="~/Content/assets/svg/motchieu.svg" alt="">
+                            </div>
+                            <div class="journey-box journey-box--destination  b uppercase-text">
+                                <label for="destination" class="d-flex al-center">
+                                    <img src="~/Content/assets/svg/icons/map_search.svg"
+                                         alt="">Điểm
+                                    đến:
+                                </label>
+                                <p class="location-span">Ho Chi Minh</p>
+                            </div>
+                        </div>
+                        <div class="journey-form journey-form-location btm addthemright2 ">
+                            <div class="journey-box journey-box--departure  b uppercase-text">
+                                <label for="departure" class="d-flex al-center">
+                                    <img src="~/Content/assets/svg/icons/plane_search.svg"
+                                         alt="">Điểm đi:
+                                </label>
+                                <p class="location-span">Ha Noi</p>
+                            </div>
+                            <div class="icon-togle">
+                                <div class="khuhoi khuhoihienthiimg">
+                                    <img src="~/Content/assets/svg/icons/round-trip.svg" alt="">
+                                </div>
+                                <img id="khuhoiimgnone" src="~/Content/assets/svg/motchieu.svg" alt="">
+                            </div>
+                            <div class="journey-box journey-box--destination  b uppercase-text">
+                                <label for="destination" class="d-flex al-center">
+                                    <img src="~/Content/assets/svg/icons/map_search.svg"
+                                         alt="">Điểm
+                                    đến:
+                                </label>
+                                <p class="location-span">Ho Chi Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex add__Changduong">
+                        <span class="">+</span>
+                        <p>THÊM CHUYẾN BAY</p>
+                    </div>
+                </div>
+                <div class="form__right">
+                    <div>
+                        <div class="form__flight-info ">
+                            <select name="class" id="flight-class">
+                                <option value="economy">Hạng: Phổ thông</option>
+                                <option value="business">Hạng: Thương gia</option>
+                                <option value="first">Hạng: Hạng nhất</option>
+                            </select>
+                            <select name="promo" id="promo-code">
+                                <option value="">Mã khuyến mãi</option>
+                                <option value="PROMO1">PROMO1</option>
+                                <option value="PROMO2">PROMO2</option>
+                                <option value="PROMO3">PROMO3</option>
+                            </select>
+                        </div>
+                        <div class="addthemFormRight">
+                            <div class="journey-form btm">
+                                <div class="journey-box journey-box--date journey-date--departure b ">
+                                    <label for="departure-date" class="d-flex al-center">
+                                        <img src="~/Content/assets/svg/icons/date_search.svg" alt="">Ngày
+                                        đi
+                                    </label>
+                                    <div><input type="date" id="departure-date"></div>
+                                </div>
+                                <div class="journey-box journey-box--date journey-date--return b khuhoi khuhoihienthidate">
+                                    <label for="return-date " class="d-flex al-center">
+                                        <img src="~/Content/assets/svg/icons/date_search.svg"
+                                             alt="">Ngày
+                                        về
+                                    </label>
+                                    <div> <input type="date" id="return-date"></div>
+                                </div>
+                                <div class="journey-box journey-box--customer">
+                                    <label for="date" class="d-flex al-center">
+                                        <img src="~/Content/assets/svg/icons/user_search.svg" alt="">
+                                        Hành Khách
+                                    </label>
+
+                                    <div class="mt-5">
+                                        <u>
+                                            <span class="b">1</span> Người lớn, <span class="b">1</span> trẻ em, <span class="b">1</span> em
+                                            bé
+                                        </u>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="journey-form btm addthemright2">
+                                <div class="journey-box journey-box--date journey-date--departure b ">
+                                    <label for="departure-date">
+                                        <img src="~/Content/assets/svg/icons/date_search.svg" alt="">Ngày
+                                        đi
+                                    </label><br>
+                                    <input type="date" id="departure-date">
+                                </div>
+                                <div class="journey-box journey-box--date journey-date--return b khuhoi khuhoihienthidate">
+                                    <label for="return-date">
+                                        <img src="~/Content/assets/svg/icons/date_search.svg" alt="">Ngày
+                                        về
+                                    </label><br>
+                                    <input type="date" id="return-date">
+                                </div>
+                                <div class="journey-box journey-box--customer">
+                                    <label for="date">
+                                        <img src="~/Content/assets/svg/icons/user_search.svg" alt=""> Hành Khách
+                                    </label>
+                                    <br>
+                                    <u>
+                                        <span class="b">1</span> Người lớn, <span class="b">1</span> trẻ em, <span class="b">1</span>
+                                        em
+                                        bé
+                                    </u>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button class=" journey-box--submit b">SUBMIT</button>
+
+                </div>
+
+            </form>
+
+        </div>
     </div>
-</main>
+</div>
+<div>
+    <div class="content">
+        <section class="best-price-flights m-80 ">
+            <div class="d-flex justify-content-between">
+                <h5 class="uppercase-text text-primary">Chuyến bay có giá tốt</h5>
+                <ul class="d-flex list-none-style text-primary">
+                    <li>Asia</li>
+                    <li>Africa</li>
+                    <li>Euro</li>
+                    <li>America</li>
+                </ul>
+            </div>
+            <p class="text-info">Save up to $400 per person</p>
+            <div class="d-flex justify-content-between gap-10 mt-50 respon__table">
+                <article class="card box-shadow w-25">
+                    <div class="relative card__image-wrapper">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-top">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <h5 class="card__title">Take off to Tokyo sale Sakura show</h5>
+                            <span class="card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <img src="~/Content/assets/svg/vietnamairlines.svg" alt="" class="logo-vietnamairlines">
+                    <div class="card__footer">
+                        <span class="card__route text-primary">Dubai - Tokyo</span>
+                        <span class="card__separator text-info">/</span>
+                        <span class="card__region  text-info">Asia</span>
+                        <div class="reviews d-flex justify-content-between">
+                            <p class="card__ticket-type text-info">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg"
+                                                        alt="">
+                            </p>
+                            <div>
+                                <div class="card__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary">25 người xem</span>
+                            </div>
+                        </div>
+                        <p class="card__text text-primary">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe vero officia sequi a blanditiis.
+                        </p>
+                        <div class="card__action d-flex justify-content-between">
+                            <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                            <div class="card__price-wrapper">
+                                <p class="card__price text-primary">35,000,000 đ</p>
+                                <del class="card__price-original text-info ">39,680,000 đ</del>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card box-shadow w-25">
+                    <div class="relative card__image-wrapper">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-top">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <h5 class="card__title">Take off to Tokyo sale Sakura show</h5>
+                            <span class="card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <img src="~/Content/assets/svg/vietnamairlines.svg" alt="" class="logo-vietnamairlines">
+                    <div class="card__footer">
+                        <span class="card__route text-primary">Dubai - Tokyo</span>
+                        <span class="card__separator text-info">/</span>
+                        <span class="card__region  text-info">Asia</span>
+                        <div class="reviews d-flex justify-content-between">
+                            <p class="card__ticket-type text-info">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg"
+                                                        alt="">
+                            </p>
+                            <div>
+                                <div class="card__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary">25 người xem</span>
+                            </div>
+                        </div>
+                        <p class="card__text text-primary">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe vero officia sequi a blanditiis.
+                        </p>
+                        <div class="card__action d-flex justify-content-between">
+                            <button class="card__detail-btn btn-sm bg-info text-light">Chi tiết</button>
+                            <div class="card__price-wrapper">
+                                <p class="card__price text-primary">35,000,000 đ</p>
+                                <del class="card__price-original text-info ">39,680,000 đ</del>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-full box-shadow w-50 relative card__image-wrapper">
+                    <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-full">
+                    <span class="card__discount">Giảm 15%</span>
+                    <div class="card-full__content d-flex justify-content-between">
+                        <div class="card-full__content-left">
+                            <h5 class="card-full__title  text-light">
+                                Tour 1 Ngày Antelope
+                                Canyon & Horseshoe
+                            </h5>
+                            <span class="card__route text-primary">Dubai - Tokyo</span>
+                            <span class="card__separator text-info">/</span>
+                            <span class="card__region  text-info">Asia</span>
+                            <p class="card__ticket-type text-light">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg" alt="">
+                            </p>
+                            <button class="bg-danger text-light btn-md">Chi tiết</button>
+                        </div>
+                        <div class="card-full__content-right">
+                            <div class="card-full__star">
+                                <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                            </div>
+                            <span class="card__ticket-view text-light">25 người xem</span>
+                            <hr>
+                            <p class="card-full__price text-light">35,000,000 đ</p>
+                            <del class="card-full__price-original text-light ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="best-price-flights ">
+            <div class="d-flex justify-content-between gap-10 respon__table wrap-reverse">
+                <article class="card-full box-shadow w-50 relative card__image-wrapper">
+                    <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-full">
+                    <span class="card__discount">Giảm 15%</span>
+                    <div class="card-full__content d-flex justify-content-between">
+                        <div class="card-full__content-left">
+                            <h5 class="card-full__title  text-light">
+                                Tour 1 Ngày Antelope
+                                Canyon & Horseshoe
+                            </h5>
+                            <span class="card__route text-primary">Dubai - Tokyo</span>
+                            <span class="card__separator text-info">/</span>
+                            <span class="card__region  text-info">Asia</span>
+                            <p class="card__ticket-type text-light">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg" alt="">
+                            </p>
+                            <button class=" bg-danger text-light btn-md">Chi tiết</button>
+                        </div>
+                        <div class="card-full__content-right">
+                            <div class="card-full__star">
+                                <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                            </div>
+                            <span class="card__ticket-view text-light">25 người xem</span>
+                            <hr>
+                            <p class="card-full__price text-light">35,000,000 đ</p>
+                            <del class="card-full__price-original text-light ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+                <article class="card box-shadow w-25">
+                    <div class="relative card__image-wrapper">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-top">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <h5 class="card__title">Take off to Tokyo sale Sakura show</h5>
+                            <span class="card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <img src="~/Content/assets/svg/vietnamairlines.svg" alt="" class="logo-vietnamairlines">
+                    <div class="card__footer">
+                        <span class="card__route text-primary">Dubai - Tokyo</span>
+                        <span class="card__separator text-info">/</span>
+                        <span class="card__region  text-info">Asia</span>
+                        <div class="reviews d-flex justify-content-between">
+                            <p class="card__ticket-type text-info">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg"
+                                                        alt="">
+                            </p>
+                            <div>
+                                <div class="card__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary">25 người xem</span>
+                            </div>
+                        </div>
+                        <p class="card__text text-primary">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe vero officia sequi a blanditiis.
+                        </p>
+                        <div class="card__action d-flex justify-content-between">
+                            <button class="card__detail-btn btn-sm bg-info text-light">Chi tiết</button>
+                            <div class="card__price-wrapper">
+                                <p class="card__price text-primary">35,000,000 đ</p>
+                                <del class="card__price-original text-info ">39,680,000 đ</del>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card box-shadow w-25">
+                    <div class="relative card__image-wrapper">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-top">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <h5 class="card__title">Take off to Tokyo sale Sakura show</h5>
+                            <span class="card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <img src="~/Content/assets/svg/vietnamairlines.svg" alt="" class="logo-vietnamairlines">
+                    <div class="card__footer">
+                        <span class="card__route text-primary">Dubai - Tokyo</span>
+                        <span class="card__separator text-info">/</span>
+                        <span class="card__region  text-info">Asia</span>
+                        <div class="reviews d-flex justify-content-between">
+                            <p class="card__ticket-type text-info">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg"
+                                                        alt="">
+                            </p>
+                            <div>
+                                <div class="card__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary">25 người xem</span>
+                            </div>
+                        </div>
+                        <p class="card__text text-primary">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe vero officia sequi a blanditiis.
+                        </p>
+                        <div class="card__action d-flex justify-content-between">
+                            <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                            <div class="card__price-wrapper">
+                                <p class="card__price text-primary">35,000,000 đ</p>
+                                <del class="card__price-original text-info ">39,680,000 đ</del>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="news-section d-flex justify-content-between wrap">
+            <article class="news__column-1 text-primary  box-shadow">
+                <div class="news__heading d-flex ">
+                    <span class="text-uppercase cursor btn-new-application active">
+                        <img src="~/Content/assets/svg/icons/news/planeBig.svg" alt=""> Đơn mới
+                    </span>
+                    <span class="text-uppercase cursor btn-cheap-price">
+                        <img src="~/Content/assets/svg/icons/news/cheapPrice.svg" alt=""> Giá rẻ
+                    </span>
+                </div>
+                <div class="content">
+                    <div id="new-application" class="respon__table--grid ">
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div id="cheap-price" class="respon__table--grid " style="display:none">
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="news-item">
+                            <div class="d-flex flight-info">
+                                <img src="~/Content/assets/svg/icons/news/vietnamAirlines.svg" alt="" class="flight-info__logo">
+                                <span class="flight-info__code text-uppercase text-danger">VN2115</span>
+                            </div>
+                            <p class="news-item__desc">
+                                Customer has just booked a one-way ticket from Vinh City Go Ho Chi Minh
+                                City
+                            </p>
+                            <p class="news-item__date">July 10/2023</p>
+                            <div class="news-item__footer d-flex justify-content-between">
+                                <div>
+                                    <p class="news-item__price"> <img src="~/Content/assets/svg/icons/news/price.svg" alt=""> Giá từ : </p>
+                                    <p class="price text-danger">1,375,600 VNĐ</p>
+                                </div>
+                                <button class="news-item__btn btn-sm bg-info text-light">ĐẶT VÉ</button>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="news__column-2 ">
+                <div class="heading">
+                    <h4 class="text-uppercase text-primary">
+                        <img src="~/Content/assets/svg/icons/news/HotelBig.svg" alt=""> Khách sạn
+                    </h4>
+                    <span class="text-primary">Best Price </span>
+                </div>
+                <div class="banner relative">
+                    <img src="~/Content/assets/image/Main/banner.png" alt="">
+                    <span class="card__discount">Giảm 15%</span>
+                    <div class="card-infor">
+                        <p class="card-description colum__max--1">Sunset Beach Resort with Kahung Beach Full Day Tour</p>
+                        <span class="card-date">26/05/2023</span>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="d-flex card_item-header">
+                        <div class="card_item_left text-primary">
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                            <p> <img src="~/Content/assets/svg/icons/news/HotelSmall.svg" alt=""> 1 night</p>
+                        </div>
+                        <div class="card_item_right text-primary b">
+                            <h6> Sunset Beach Resort with Kahung Beach</h6>
+                            <div>
+                                <span class="text-danger"> <img src="~/Content/assets/svg/icons/news/map.svg" alt="">Phuket</span>
+                            </div>
+                            <span class="text-danger"><img src="~/Content/assets/svg/icons/news/customer.svg" alt="">2 Khách/phòng</span>
+                        </div>
+                    </div>
+                    <div class="d-flex card_item-footer justify-content-between">
+                        <div>
+                            <span class="text-primary label"><img src="~/Content/assets/svg/icons/news/price.svg" alt="">Giá từ :</span>
+                            <h6 class="price text-danger">1,375,600 VNĐ</h6>
+                        </div>
+                        <button class="btn-sm bg-danger">Chi tiết</button>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="d-flex card_item-header">
+                        <div class="card_item_left text-primary">
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                            <p> <img src="~/Content/assets/svg/icons/news/HotelSmall.svg" alt=""> 1 night</p>
+                        </div>
+                        <div class="card_item_right text-primary b">
+                            <h6> Sunset Beach Resort with Kahung Beach</h6>
+                            <div>
+                                <span class="text-danger"> <img src="~/Content/assets/svg/icons/news/map.svg" alt="">Phuket</span>
+                            </div>
+                            <span class="text-danger"><img src="~/Content/assets/svg/icons/news/customer.svg" alt="">2 Khách/phòng</span>
+                        </div>
+                    </div>
+                    <div class="d-flex card_item-footer justify-content-between">
+                        <div>
+                            <span class="text-primary label"><img src="~/Content/assets/svg/icons/news/price.svg" alt="">Giá từ :</span>
+                            <h6 class="price text-danger">1,375,600 VNĐ</h6>
+                        </div>
+                        <button class="btn-sm bg-danger">Chi tiết</button>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="d-flex card_item-header">
+                        <div class="card_item_left text-primary">
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                            <p> <img src="~/Content/assets/svg/icons/news/HotelSmall.svg" alt=""> 1 night</p>
+                        </div>
+                        <div class="card_item_right text-primary b">
+                            <h6> Sunset Beach Resort with Kahung Beach</h6>
+                            <div>
+                                <span class="text-danger"> <img src="~/Content/assets/svg/icons/news/map.svg" alt="">Phuket</span>
+                            </div>
+                            <span class="text-danger"><img src="~/Content/assets/svg/icons/news/customer.svg" alt="">2 Khách/phòng</span>
+                        </div>
+                    </div>
+                    <div class="d-flex card_item-footer justify-content-between">
+                        <div>
+                            <span class="text-primary label"><img src="~/Content/assets/svg/icons/news/price.svg" alt="">Giá từ :</span>
+                            <h6 class="price text-danger">1,375,600 VNĐ</h6>
+                        </div>
+                        <button class="btn-sm bg-danger">Chi tiết</button>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="d-flex card_item-header">
+                        <div class="card_item_left text-primary">
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                            <p> <img src="~/Content/assets/svg/icons/news/HotelSmall.svg" alt=""> 1 night</p>
+                        </div>
+                        <div class="card_item_right text-primary b">
+                            <h6> Sunset Beach Resort with Kahung Beach</h6>
+                            <div>
+                                <span class="text-danger"> <img src="~/Content/assets/svg/icons/news/map.svg" alt="">Phuket</span>
+                            </div>
+                            <span class="text-danger"><img src="~/Content/assets/svg/icons/news/customer.svg" alt="">2 Khách/phòng</span>
+                        </div>
+                    </div>
+                    <div class="d-flex card_item-footer justify-content-between">
+                        <div>
+                            <span class="text-primary label"><img src="~/Content/assets/svg/icons/news/price.svg" alt="">Giá từ :</span>
+                            <h6 class="price text-danger">1,375,600 VNĐ</h6>
+                        </div>
+                        <button class="btn-sm bg-danger">Chi tiết</button>
+                    </div>
+                </div>
+            </article>
+            <article class="news__column-3">
+                <div class="heading">
+                    <h4 class="text-uppercase text-primary">
+                        <img src="~/Content/assets/svg/icons/news/newsAndPromotions.svg" alt="">
+                        TIN TỨC & KHUYẾN MẠI
+                    </h4>
+                    <span class="text-primary">News hottest about Airlines & Explore Around the World</span>
+                </div>
+                <div class="banner relative">
+                    <img src="~/Content/assets/image/Main/banner.png" alt="">
+                    <div class="card-infor">
+                        <p class="card-description colum__max--1 ">Sunset Beach Resort with Kahung Beach Full Day Tour</p>
+                        <span class="card-date">26/05/2023</span>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="d-flex card_item-header">
+                        <div class="card_item_left text-primary">
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                            <p class="bg-danger">AIRLINES</p>
+                            <span class="text-primary label date">26/05/2023</span>
+                        </div>
+                        <div class="card_item_right text-primary b">
+                            <h6> Sunset Beach Resort with Kahung Beach</h6>
+                            <p class="text-primary b">
+                                From May 26 to the end of June 30, Vietnam Airlines applies the program
+                                "Korea - Summer paradise, cheap tickets...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="d-flex card_item-header">
+                        <div class="card_item_left text-primary">
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                            <p class="bg-danger">AIRLINES</p>
+                            <span class="text-primary label date">26/05/2023</span>
+                        </div>
+                        <div class="card_item_right text-primary b">
+                            <h6> Sunset Beach Resort with Kahung Beach</h6>
+                            <p class="text-primary b">
+                                From May 26 to the end of June 30, Vietnam Airlines applies the program
+                                "Korea - Summer paradise, cheap tickets...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="d-flex card_item-header">
+                        <div class="card_item_left text-primary">
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                            <p class="bg-danger">AIRLINES</p>
+                            <span class="text-primary label date">26/05/2023</span>
+                        </div>
+                        <div class="card_item_right text-primary b">
+                            <h6> Sunset Beach Resort with Kahung Beach</h6>
+                            <p class="text-primary b">
+                                From May 26 to the end of June 30, Vietnam Airlines applies the program
+                                "Korea - Summer paradise, cheap tickets...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="d-flex card_item-header">
+                        <div class="card_item_left text-primary">
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                            <p class="bg-danger">AIRLINES</p>
+                            <span class="text-primary label date">26/05/2023</span>
+                        </div>
+                        <div class="card_item_right text-primary b">
+                            <h6> Sunset Beach Resort with Kahung Beach</h6>
+                            <p class="text-primary b">
+                                From May 26 to the end of June 30, Vietnam Airlines applies the program
+                                "Korea - Summer paradise, cheap tickets...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="d-flex card_item-header">
+                        <div class="card_item_left text-primary">
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                            <p class="bg-danger">AIRLINES</p>
+                            <span class="text-primary label date">26/05/2023</span>
+                        </div>
+                        <div class="card_item_right text-primary b">
+                            <h6> Sunset Beach Resort with Kahung Beach</h6>
+                            <p class="text-primary b">
+                                From May 26 to the end of June 30, Vietnam Airlines applies the program
+                                "Korea - Summer paradise, cheap tickets...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="ticket_card-event">
+            <div class="ticket_header-event">
+                <div class="heading">
+                    <h4 class="uppercase-text text-primary">VÉ SỰ KIỆN VÀ THỂ THAO</h4>
+                    <p class="text-info">Save up to $400 per person</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between gap-10 mt-50 respon__table--grid">
+                <article class="card_item relative box-shadow">
+                    <div class="image relative">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <span class="text-light card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <div class="card_full-content ">
+                        <div class="category-view d-flex justify-content-between">
+                            <div>
+                                <span class="bg-danger text-light category">Thể thao</span>
+                            </div>
+                            <div>
+                                <div class="card-full__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary b">25 người xem</span>
+                            </div>
+                        </div>
+                        <h6>Take off to Tokyo sale Take off to Tokyo sale Sa Sakura show </h6>
+                        <div class="card-infor">
+                            <p>
+                                <img src="~/Content/assets/svg/icons/eventAndSport/pin.svg" alt=""> <span> Hạ Long, Quảng Ninh </span>
+                            </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/calender.svg" alt=""> <span> T3, 17/11 </span> </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/time.svg" alt=""> <span> 04:30 - 16:30 </span> </p>
+                        </div>
+                    </div>
+                    <div class="card__action d-flex justify-content-between">
+                        <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                        <div class="card__price-wrapper">
+                            <p class="card__price text-primary">35,000,000 đ</p>
+                            <del class="card__price-original text-info ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+                <article class="card_item relative box-shadow">
+                    <div class="image relative">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <span class="text-light card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <div class="card_full-content ">
+                        <div class="category-view d-flex justify-content-between">
+                            <div>
+                                <span class="bg-danger text-light category">Thể thao</span>
+                            </div>
+                            <div>
+                                <div class="card-full__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary b">25 người xem</span>
+                            </div>
+                        </div>
+                        <h6>Take off to Tokyo sale Take off to Tokyo sale Sa Sakura show </h6>
+                        <div class="card-infor">
+                            <p>
+                                <img src="~/Content/assets/svg/icons/eventAndSport/pin.svg" alt=""> <span> Hạ Long, Quảng Ninh </span>
+                            </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/calender.svg" alt=""> <span> T3, 17/11 </span> </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/time.svg" alt=""> <span> 04:30 - 16:30 </span> </p>
+                        </div>
+                    </div>
+                    <div class="card__action d-flex justify-content-between">
+                        <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                        <div class="card__price-wrapper">
+                            <p class="card__price text-primary">35,000,000 đ</p>
+                            <del class="card__price-original text-info ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+                <article class="card_item relative box-shadow">
+                    <div class="image relative">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <span class="text-light card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <div class="card_full-content ">
+                        <div class="category-view d-flex justify-content-between">
+                            <div>
+                                <span class="bg-danger text-light category">Thể thao</span>
+                            </div>
+                            <div>
+                                <div class="card-full__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary b">25 người xem</span>
+                            </div>
+                        </div>
+                        <h6>Take off to Tokyo sale Take off to Tokyo sale Sa Sakura show </h6>
+                        <div class="card-infor">
+                            <p>
+                                <img src="~/Content/assets/svg/icons/eventAndSport/pin.svg" alt=""> <span> Hạ Long, Quảng Ninh </span>
+                            </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/calender.svg" alt=""> <span> T3, 17/11 </span> </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/time.svg" alt=""> <span> 04:30 - 16:30 </span> </p>
+                        </div>
+                    </div>
+                    <div class="card__action d-flex justify-content-between">
+                        <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                        <div class="card__price-wrapper">
+                            <p class="card__price text-primary">35,000,000 đ</p>
+                            <del class="card__price-original text-info ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+                <article class="card_item relative box-shadow">
+                    <div class="image relative">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <span class="text-light card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <div class="card_full-content ">
+                        <div class="category-view d-flex justify-content-between">
+                            <div>
+                                <span class="bg-danger text-light category">Thể thao</span>
+                            </div>
+                            <div>
+                                <div class="card-full__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary b">25 người xem</span>
+                            </div>
+                        </div>
+                        <h6>Take off to Tokyo sale Take off to Tokyo sale Sa Sakura show </h6>
+                        <div class="card-infor">
+                            <p>
+                                <img src="~/Content/assets/svg/icons/eventAndSport/pin.svg" alt=""> <span> Hạ Long, Quảng Ninh </span>
+                            </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/calender.svg" alt=""> <span> T3, 17/11 </span> </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/time.svg" alt=""> <span> 04:30 - 16:30 </span> </p>
+                        </div>
+                    </div>
+                    <div class="card__action d-flex justify-content-between">
+                        <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                        <div class="card__price-wrapper">
+                            <p class="card__price text-primary">35,000,000 đ</p>
+                            <del class="card__price-original text-info ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+                <article class="card_item relative box-shadow">
+                    <div class="image relative">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <span class="text-light card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <div class="card_full-content ">
+                        <div class="category-view d-flex justify-content-between">
+                            <div>
+                                <span class="bg-danger text-light category">Thể thao</span>
+                            </div>
+                            <div>
+                                <div class="card-full__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary b">25 người xem</span>
+                            </div>
+                        </div>
+                        <h6>Take off to Tokyo sale Take off to Tokyo sale Sa Sakura show </h6>
+                        <div class="card-infor">
+                            <p>
+                                <img src="~/Content/assets/svg/icons/eventAndSport/pin.svg" alt=""> <span> Hạ Long, Quảng Ninh </span>
+                            </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/calender.svg" alt=""> <span> T3, 17/11 </span> </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/time.svg" alt=""> <span> 04:30 - 16:30 </span> </p>
+                        </div>
+                    </div>
+                    <div class="card__action d-flex justify-content-between">
+                        <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                        <div class="card__price-wrapper">
+                            <p class="card__price text-primary">35,000,000 đ</p>
+                            <del class="card__price-original text-info ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+                <article class="card_item relative box-shadow">
+                    <div class="image relative">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <span class="text-light card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <div class="card_full-content ">
+                        <div class="category-view d-flex justify-content-between">
+                            <div>
+                                <span class="bg-danger text-light category">Thể thao</span>
+                            </div>
+                            <div>
+                                <div class="card-full__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary b">25 người xem</span>
+                            </div>
+                        </div>
+                        <h6>Take off to Tokyo sale Take off to Tokyo sale Sa Sakura show </h6>
+                        <div class="card-infor">
+                            <p>
+                                <img src="~/Content/assets/svg/icons/eventAndSport/pin.svg" alt=""> <span> Hạ Long, Quảng Ninh </span>
+                            </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/calender.svg" alt=""> <span> T3, 17/11 </span> </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/time.svg" alt=""> <span> 04:30 - 16:30 </span> </p>
+                        </div>
+                    </div>
+                    <div class="card__action d-flex justify-content-between">
+                        <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                        <div class="card__price-wrapper">
+                            <p class="card__price text-primary">35,000,000 đ</p>
+                            <del class="card__price-original text-info ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+                <article class="card_item relative box-shadow">
+                    <div class="image relative">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <span class="text-light card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <div class="card_full-content ">
+                        <div class="category-view d-flex justify-content-between">
+                            <div>
+                                <span class="bg-danger text-light category">Thể thao</span>
+                            </div>
+                            <div>
+                                <div class="card-full__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary b">25 người xem</span>
+                            </div>
+                        </div>
+                        <h6>Take off to Tokyo sale Take off to Tokyo sale Sa Sakura show </h6>
+                        <div class="card-infor">
+                            <p>
+                                <img src="~/Content/assets/svg/icons/eventAndSport/pin.svg" alt=""> <span> Hạ Long, Quảng Ninh </span>
+                            </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/calender.svg" alt=""> <span> T3, 17/11 </span> </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/time.svg" alt=""> <span> 04:30 - 16:30 </span> </p>
+                        </div>
+                    </div>
+                    <div class="card__action d-flex justify-content-between">
+                        <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                        <div class="card__price-wrapper">
+                            <p class="card__price text-primary">35,000,000 đ</p>
+                            <del class="card__price-original text-info ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+                <article class="card_item relative box-shadow">
+                    <div class="image relative">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <span class="text-light card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <div class="card_full-content ">
+                        <div class="category-view d-flex justify-content-between">
+                            <div>
+                                <span class="bg-danger text-light category">Thể thao</span>
+                            </div>
+                            <div>
+                                <div class="card-full__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary b">25 người xem</span>
+                            </div>
+                        </div>
+                        <h6>Take off to Tokyo sale Take off to Tokyo sale Sa Sakura show </h6>
+                        <div class="card-infor">
+                            <p>
+                                <img src="~/Content/assets/svg/icons/eventAndSport/pin.svg" alt=""> <span> Hạ Long, Quảng Ninh </span>
+                            </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/calender.svg" alt=""> <span> T3, 17/11 </span> </p>
+                            <p> <img src="~/Content/assets/svg/icons/eventAndSport/time.svg" alt=""> <span> 04:30 - 16:30 </span> </p>
+                        </div>
+                    </div>
+                    <div class="card__action d-flex justify-content-between">
+                        <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                        <div class="card__price-wrapper">
+                            <p class="card__price text-primary">35,000,000 đ</p>
+                            <del class="card__price-original text-info ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="d-flex booking-section justify-content-between">
+            <div class="booking-info">
+                <h4 class="booking-title">Booking Flight around the World</h4>
+                <span class="booking-description">The price is always the cheapest in Viet Nam</span>
+            </div>
+            <div class=" booking-link">
+                <button class="uppercase-text b">book now</button>
+            </div>
+        </section>
+        <section class="agent-list-section">
+            <div class="heading d-flex justify-content-between">
+                <h4 class="text-uppercase text-primary agent-list-heading">DANH SÁCH ĐẠI LÝ TẠI CÁC TỈNH</h4>
+                <div class="btn__chuyendi">
+                    <img id="prevButton" src="~/Content/assets/svg/icons/previus.svg" alt="Previous" style="cursor: pointer;">
+                    <img id="nextButton" src="~/Content/assets/svg/icons/next.svg" alt="Next" style="cursor: pointer;">
+                </div>
+            </div>
+            <div class="agent-list-content-wrapper">
+                <div class="agent-list-content d-flex">
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                    <article class="card_item item_daily">
+                        <div>
+                            <img src="~/Content/assets/image/Main/banner.png" alt="">
+                        </div>
+                        <h6 class="b text-primary uppercase-text">81 HOANG CAU O CHO DUA, DONG DA</h6>
+                        <p class="text-info">Ha Noi</p>
+                    </article>
+                </div>
+            </div>
+
+        </section>
+        <section class="best-price-flights m-80 ">
+            <div class="d-flex justify-content-between">
+                <h5 class="uppercase-text text-primary">Chuyến bay có giá tốt</h5>
+                <ul class="d-flex list-none-style text-primary">
+                    <li>Asia</li>
+                    <li>Africa</li>
+                    <li>Euro</li>
+                    <li>America</li>
+                </ul>
+            </div>
+            <p class="text-info">Save up to $400 per person</p>
+            <div class="d-flex justify-content-between gap-10 mt-50 respon__table">
+                <article class="card box-shadow w-25">
+                    <div class="relative card__image-wrapper">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-top">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <h5 class="card__title">Take off to Tokyo sale Sakura show</h5>
+                            <span class="card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <img src="~/Content/assets/svg/vietnamairlines.svg" alt="" class="logo-vietnamairlines">
+                    <div class="card__footer">
+                        <span class="card__route text-primary">Dubai - Tokyo</span>
+                        <span class="card__separator text-info">/</span>
+                        <span class="card__region  text-info">Asia</span>
+                        <div class="reviews d-flex justify-content-between">
+                            <p class="card__ticket-type text-info">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg"
+                                                        alt="">
+                            </p>
+                            <div>
+                                <div class="card__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary">25 người xem</span>
+                            </div>
+                        </div>
+                        <p class="card__text text-primary">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe vero officia sequi a blanditiis.
+                        </p>
+                        <div class="card__action d-flex justify-content-between">
+                            <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                            <div class="card__price-wrapper">
+                                <p class="card__price text-primary">35,000,000 đ</p>
+                                <del class="card__price-original text-info ">39,680,000 đ</del>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card box-shadow w-25">
+                    <div class="relative card__image-wrapper">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-top">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <h5 class="card__title">Take off to Tokyo sale Sakura show</h5>
+                            <span class="card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <img src="~/Content/assets/svg/vietnamairlines.svg" alt="" class="logo-vietnamairlines">
+                    <div class="card__footer">
+                        <span class="card__route text-primary">Dubai - Tokyo</span>
+                        <span class="card__separator text-info">/</span>
+                        <span class="card__region  text-info">Asia</span>
+                        <div class="reviews d-flex justify-content-between">
+                            <p class="card__ticket-type text-info">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg"
+                                                        alt="">
+                            </p>
+                            <div>
+                                <div class="card__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary">25 người xem</span>
+                            </div>
+                        </div>
+                        <p class="card__text text-primary">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe vero officia sequi a blanditiis.
+                        </p>
+                        <div class="card__action d-flex justify-content-between">
+                            <button class="card__detail-btn btn-sm bg-info text-light">Chi tiết</button>
+                            <div class="card__price-wrapper">
+                                <p class="card__price text-primary">35,000,000 đ</p>
+                                <del class="card__price-original text-info ">39,680,000 đ</del>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-full box-shadow w-50 relative card__image-wrapper">
+                    <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-full">
+                    <span class="card__discount">Giảm 15%</span>
+                    <div class="card-full__content d-flex justify-content-between">
+                        <div class="card-full__content-left">
+                            <h5 class="card-full__title  text-light">
+                                Tour 1 Ngày Antelope
+                                Canyon & Horseshoe
+                            </h5>
+                            <span class="card__route text-primary">Dubai - Tokyo</span>
+                            <span class="card__separator text-info">/</span>
+                            <span class="card__region  text-info">Asia</span>
+                            <p class="card__ticket-type text-light">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg" alt="">
+                            </p>
+                            <button class="bg-danger text-light btn-md">Chi tiết</button>
+                        </div>
+                        <div class="card-full__content-right">
+                            <div class="card-full__star">
+                                <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                            </div>
+                            <span class="card__ticket-view text-light">25 người xem</span>
+                            <hr>
+                            <p class="card-full__price text-light">35,000,000 đ</p>
+                            <del class="card-full__price-original text-light ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="best-price-flights ">
+            <div class="d-flex justify-content-between gap-10 respon__table wrap-reverse">
+                <article class="card-full box-shadow w-50 relative card__image-wrapper">
+                    <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-full">
+                    <span class="card__discount">Giảm 15%</span>
+                    <div class="card-full__content d-flex justify-content-between">
+                        <div class="card-full__content-left">
+                            <h5 class="card-full__title  text-light">
+                                Tour 1 Ngày Antelope
+                                Canyon & Horseshoe
+                            </h5>
+                            <span class="card__route text-primary">Dubai - Tokyo</span>
+                            <span class="card__separator text-info">/</span>
+                            <span class="card__region  text-info">Asia</span>
+                            <p class="card__ticket-type text-light">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg" alt="">
+                            </p>
+                            <button class=" bg-danger text-light btn-md">Chi tiết</button>
+                        </div>
+                        <div class="card-full__content-right">
+                            <div class="card-full__star">
+                                <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                            </div>
+                            <span class="card__ticket-view text-light">25 người xem</span>
+                            <hr>
+                            <p class="card-full__price text-light">35,000,000 đ</p>
+                            <del class="card-full__price-original text-light ">39,680,000 đ</del>
+                        </div>
+                    </div>
+                </article>
+                <article class="card box-shadow w-25">
+                    <div class="relative card__image-wrapper">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-top">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <h5 class="card__title">Take off to Tokyo sale Sakura show</h5>
+                            <span class="card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <img src="~/Content/assets/svg/vietnamairlines.svg" alt="" class="logo-vietnamairlines">
+                    <div class="card__footer">
+                        <span class="card__route text-primary">Dubai - Tokyo</span>
+                        <span class="card__separator text-info">/</span>
+                        <span class="card__region  text-info">Asia</span>
+                        <div class="reviews d-flex justify-content-between">
+                            <p class="card__ticket-type text-info">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg"
+                                                        alt="">
+                            </p>
+                            <div>
+                                <div class="card__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary">25 người xem</span>
+                            </div>
+                        </div>
+                        <p class="card__text text-primary">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe vero officia sequi a blanditiis.
+                        </p>
+                        <div class="card__action d-flex justify-content-between">
+                            <button class="card__detail-btn btn-sm bg-info text-light">Chi tiết</button>
+                            <div class="card__price-wrapper">
+                                <p class="card__price text-primary">35,000,000 đ</p>
+                                <del class="card__price-original text-info ">39,680,000 đ</del>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card box-shadow w-25">
+                    <div class="relative card__image-wrapper">
+                        <img src="~/Content/assets/image/Main/banner.png" alt="" class="img-top">
+                        <span class="card__discount">Giảm 15%</span>
+                        <div class="card__info">
+                            <h5 class="card__title">Take off to Tokyo sale Sakura show</h5>
+                            <span class="card__countdown">Hết hạn sau: 34 ngày 12:08:17</span>
+                        </div>
+                    </div>
+                    <img src="~/Content/assets/svg/vietnamairlines.svg" alt="" class="logo-vietnamairlines">
+                    <div class="card__footer">
+                        <span class="card__route text-primary">Dubai - Tokyo</span>
+                        <span class="card__separator text-info">/</span>
+                        <span class="card__region  text-info">Asia</span>
+                        <div class="reviews d-flex justify-content-between">
+                            <p class="card__ticket-type text-info">
+                                Vé máy bay quốc tế <img src="~/Content/assets/svg/icons/planeSmall.svg"
+                                                        alt="">
+                            </p>
+                            <div>
+                                <div class="card__star">
+                                    <img src="~/Content/assets/svg/icons/starnone.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                    <img src="~/Content/assets/svg/icons/starheck.svg" alt="">
+                                </div>
+                                <span class="card__ticket-view text-primary">25 người xem</span>
+                            </div>
+                        </div>
+                        <p class="card__text text-primary">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe vero officia sequi a blanditiis.
+                        </p>
+                        <div class="card__action d-flex justify-content-between">
+                            <button class="card__detail-btn btn-sm btn-sm bg-info text-light">Chi tiết</button>
+                            <div class="card__price-wrapper">
+                                <p class="card__price text-primary">35,000,000 đ</p>
+                                <del class="card__price-original text-info ">39,680,000 đ</del>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="steps-container respon__table--grid">
+            <div class="step">
+                <div class="step-title-div">
+                    <div class="step-number">1</div>
+                    <div class="title">
+                        <div class="step-icon"><img src="~/Content/assets/svg/icons/gps.svg" alt="" /></div>
+                        <div class="step-title">Pick your perfect trip</div>
+                    </div>
+
+                </div>
+                <p class="step-description">
+                    We offer 200+ immersive, guided tours around the world. Wherever you
+                    choose to go, you’ll enjoy lots of advantages that make traveling with
+                    us different.
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-title-div">
+                    <div class="step-number">2</div>
+                    <div class="title">
+                        <div class="step-icon"><img src="~/Content/assets/svg/icons/card.svg" alt="" /></div>
+                        <div class="step-title">Put just $99 down</div>
+                    </div>
+
+                </div>
+                <p class="step-description">
+                    That's all it takes to secure a spot on one of our group tours when
+                    you sign up for AutoPay. Plus, you can pay in interest-free, monthly
+                    installments.
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-title-div">
+                    <div class="step-number">3</div>
+                    <div class="title">
+                        <div class="step-icon"><img src="~/Content/assets/svg/icons/packing.svg" alt="" /></div>
+                        <div class="step-title">Prep your packing list</div>
+                    </div>
+
+                </div>
+
+                <p class="step-description">
+                    While you're deciding what to take, we’ll be busy arranging your
+                    hotels, meals, tickets, and more tour essentials. That's what going
+                    guided is all about.
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-title-div">
+                    <div class="step-number">4</div>
+                    <div class="title">
+                        <div class="step-icon"><img src="~/Content/assets/svg/icons/flight.svg" alt="" /></div>
+                        <div class="step-title">Say bon voyage!</div>
+                    </div>
+                </div>
+
+                <p class="step-description">
+                    Set off on a life-changing, horizon-expanding adventure with peace of
+                    mind knowing that we’ve got you covered every step of the way.
+                </p>
+            </div>
+        </section>
+        @section Scripts {
+            <script src="~/Content/assets/js/main.js"></script>
+        }

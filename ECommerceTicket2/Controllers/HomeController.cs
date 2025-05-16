@@ -3,26 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using ECommerceTicket2.Models;
 namespace ECommerceTicket2.Controllers
 {
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
+            
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Flight()
         {
-            ViewBag.Message = "Your application description page.";
+            return View();
+        }
+        public ActionResult FlightList()
+        {
 
             return View();
         }
-
-        public ActionResult Contact()
+        public ActionResult FlightPayment()
         {
-            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult FlightPayment1()
+        {
 
             return View();
         }

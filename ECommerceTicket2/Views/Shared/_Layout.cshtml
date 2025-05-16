@@ -1,39 +1,190 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.title - Ticket </title>
+    @RenderSection("Styles", required: false)
+    @Styles.Render("~/Content/cssMain")
+
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+    <div class="container__respon">
+        <header class="header bg-info">
+            <div class="header__logo">
+                <img src="~/Content/assets/svg/logoLight.svg" alt="" />
+            </div>
+            <div class="header__right">
+                <div class="header__actions">
+                    <div class="header__action-item">
+                        <img src="~/Content/assets/svg/icons/header/search.svg" alt="" />
+                    </div>
+                    <div class="header__action-item">
+                        <img src="~/Content/assets/svg/icons/header/notification.svg" alt="" />
+                    </div>
+                    <div class="header__action-item">
+                        <img src="~/Content/assets/svg/icons/header/ticket.svg" alt="" />
+                    </div>
+                </div>
+                <div class="header__user-ticket">
+                    <div class="header__user-avatar">
+                        <img src="~/Content/assets/svg/icons/header/user.svg" alt="" />
+                    </div>
+                    <span class="header__username">Nguyen</span>
+                    <div class="header__menu-toggle">
+                        <img src="~/Content/assets/svg/icons/header/kebabmMenu.svg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="bg-primary d-flex text-light justify-content-between">
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="#">Vé máy bay</a>
+                        <ul>
+                            <li>
+                                <a href="#">List Flight</a>
+                                <ul>
+                                    <li><a href="#">Passenger Inssssssfo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="">Khách sạn</a></li>
+                    <li><a href="">Tour</a></li>
+                    <li><a href="">Vé sự kiện & du lịch</a></li>
+                    <li><a href="">Đại lý</a></li>
+                    <li><a href="">Khám phá</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="logo__table__mobile--menu">
+                <img src="~/Content/assets/respon/menu-logo.svg" alt="">
+            </div>
+            <div class="nav__right--icon d-flex">
+                <div>
+                    <img src="~/Content/assets/svg/icons/header/favebook.svg" alt="" />
+                </div>
+                <div>
+                    <img src="~/Content/assets/svg/icons/header/mess.svg" alt="" />
+                </div>
+                <div class="d-flex nav--numberPhone">
+                    <div>
+                        <img src="~/Content/assets/svg/icons/header/phone.svg" alt="" />
+                    </div>
+                    <span>09.1900.5320</span>
+                </div>
+            </div>
+        </nav>
+        <main>
+            @RenderBody()
+
+        </main>
+        <footer class="footer">
+
+            <div class="footer__widgets respon__table--grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <img src="~/Content/assets/svg/icons/foooter/tickit.svg" alt="" />
+                    </div>
+                    <div class="footer__slogan">
+                        <ul>
+                            <li class="footer__member-text">MEMBER OF PROTECH GROUP</li>
+                            <li class="footer__brand-desc">
+                                The most prestigious ticket booking website in Vietnam
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__divider">
+                        <hr />
+                    </div>
+                    <div class="footer__qr-list">
+                        <div class="footer__qr-item">
+                            <img src="~/Content/assets/svg/icons/foooter/qr1.svg" alt="" />
+                        </div>
+                        <div class="footer__qr-item">
+                            <img src="~/Content/assets/svg/icons/foooter/qr2.svg" alt="" />
+                        </div>
+                        <div class="footer__qr-item">
+                            <img src="~/Content/assets/svg/icons/foooter/qr3.svg" alt="" />
+                        </div>
+                        <div class="footer__qr-item">
+                            <img src="~/Content/assets/svg/icons/foooter/qr4.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <ul class="footer__menu">
+                        <h5 class="footer__menu-title">About Us</h5>
+                        <li class="footer__menu-item"><a href="#">Introduction</a></li>
+                        <li class="footer__menu-item"><a href="#">Customer reviews</a></li>
+                        <li class="footer__menu-item">
+                            <a href="#">Operational Regulations</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#">Information privacy policy</a>
+                        </li>
+                        <li class="footer__menu-item"><a href="#">Partners</a></li>
+                        <li class="footer__menu-item"><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer__nav">
+                    <ul class="footer__menu">
+                        <h5 class="footer__menu-title">Tutorials & Help</h5>
+                        <li class="footer__menu-item">
+                            <a href="#">Frequently asked questions</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#">Ticket booking guide</a>
+                        </li>
+                        <li class="footer__menu-item"><a href="#">Payment Guide</a></li>
+                        <li class="footer__menu-item"><a href="#">Review your order</a></li>
+                        <li class="footer__menu-item"><a href="#">Print e-tickets</a></li>
+                        <li class="footer__menu-item">
+                            <a href="#">Feedback about orders</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <div class="footer__contact-info">
+                        <span class="footer__phone">09 1900 5320</span>
+                        <p class="footer__hotline">Hotline 24/7</p>
+                        <p class="footer__company">
+                            PROSPERITY TOURISM AND TECHNOLOGY GROUP JOINT STOCK COMPANY
+                        </p>
+                        <p class="footer__address">
+                            No. 19 Alley 5, Do Nha Street, Tay Mo Ward, Nam Tu Liem District,
+                            Hanoi City, Vietnam
+                        </p>
+                    </div>
+                    <form class="footer__subscribe">
+                        <input type="email" class="footer__subscribe-input" placeholder="Enter your email" />
+                        <input type="submit" class="footer__subscribe-button" value="Subscribe" />
+                    </form>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <span class="footer__copyright-text">©2023 Pro Tech Group</span>
+                <div class="footer__copyright-links">
+                    <span class="footer__copyright-link"><a href="https://www.vemaybayso.vn">www.vemaybayso.vn</a></span>
+                    <span class="footer__copyright-link"><a href="https://www.tickit.vn">www.tickit.vn</a></span>
+                    <span class="footer__copyright-link"><a href="https://www.evoucher.vn">www.evoucher.vn</a></span>
+                    <span class="footer__copyright-link"><a href="https://www.protravel.vn">www.protravel.vn</a></span>
+                </div>
+                <div class="footer__copyright-legal">
+                    <span class="footer__copyright-legal-link"><a href="#">Privacy</a></span>
+                    <span class="footer__copyright-legal-link"><a href="#">Terms & conditions</a></span>
+                </div>
+            </div>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @*@Scripts.Render("~/bundles/js")*@
+    @RenderSection("Scripts", required: false)
+
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,10 +46,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -124,9 +133,188 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Airline.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AirlineTopupBalance.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Airport.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DomesticRoute.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderFlight.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\ECommerceTicket2.dll" />
+    <Content Include="bin\ECommerceTicket2.pdb" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.Globalization.Calendars.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.ZipFile.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Net.Http.dll" />
+    <Content Include="bin\roslyn\System.Net.Sockets.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\assets\css\app.css" />
+    <Content Include="Content\assets\css\filghtAddNew.css" />
+    <Content Include="Content\assets\css\flight-list-2.css" />
+    <Content Include="Content\assets\css\Flight-Payment1.css" />
+    <Content Include="Content\assets\css\Flight-Payment2.css" />
+    <Content Include="Content\assets\css\flight.css" />
+    <Content Include="Content\assets\css\FlightLists.css" />
+    <Content Include="Content\assets\css\LowestFlightManageSalePlan.css" />
+    <Content Include="Content\assets\css\LowestFlightSalesPlan1.css" />
+    <Content Include="Content\assets\css\LowestFlightSalesPlan2..css" />
+    <Content Include="Content\assets\css\LowestFlightSalesPlan2.css" />
+    <Content Include="Content\assets\css\main.css" />
+    <Content Include="Content\assets\css\responsit.css" />
+    <Content Include="Content\assets\css\test.css" />
+    <Content Include="Content\assets\image\Flight\Banner_flight.png" />
+    <Content Include="Content\assets\image\Flight\Rectangle_46.png" />
+    <Content Include="Content\assets\image\HotBanner-1.png" />
+    <Content Include="Content\assets\image\Main\banner.png" />
+    <Content Include="Content\assets\image\Vector.png" />
+    <Content Include="Content\assets\js\filghtAddNew.js" />
+    <Content Include="Content\assets\js\flight-list-2.js" />
+    <Content Include="Content\assets\js\Flight-Payment1.js" />
+    <Content Include="Content\assets\js\Flight-Payment2.js" />
+    <Content Include="Content\assets\js\flight.js" />
+    <Content Include="Content\assets\js\FlightLists.js" />
+    <Content Include="Content\assets\js\LowestFlightManageSalePlan.js" />
+    <Content Include="Content\assets\js\LowestFlightSalesPlan1.js" />
+    <Content Include="Content\assets\js\LowestFlightSalesPlan2..js" />
+    <Content Include="Content\assets\js\main.js" />
+    <Content Include="Content\assets\js\test.js" />
+    <Content Include="Content\assets\respon\menu-logo.svg" />
+    <Content Include="Content\assets\svg\icons\card.svg" />
+    <Content Include="Content\assets\svg\icons\date_search.svg" />
+    <Content Include="Content\assets\svg\icons\down.svg" />
+    <Content Include="Content\assets\svg\icons\eventAndSport\calender.svg" />
+    <Content Include="Content\assets\svg\icons\eventAndSport\pin.svg" />
+    <Content Include="Content\assets\svg\icons\eventAndSport\time.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\card.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\down.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\drop-button.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\flight.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\giff.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\left.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\menu-seting.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\pay-active.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\pay.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\right-arow.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\right.svg" />
+    <Content Include="Content\assets\svg\icons\Flight-list\vietjet.svg" />
+    <Content Include="Content\assets\svg\icons\flight.svg" />
+    <Content Include="Content\assets\svg\icons\foooter\qr1.svg" />
+    <Content Include="Content\assets\svg\icons\foooter\qr2.svg" />
+    <Content Include="Content\assets\svg\icons\foooter\qr3.svg" />
+    <Content Include="Content\assets\svg\icons\foooter\qr4.svg" />
+    <Content Include="Content\assets\svg\icons\foooter\tickit.svg" />
+    <Content Include="Content\assets\svg\icons\gps.svg" />
+    <Content Include="Content\assets\svg\icons\header\favebook.svg" />
+    <Content Include="Content\assets\svg\icons\header\kebabmMenu.svg" />
+    <Content Include="Content\assets\svg\icons\header\mess.svg" />
+    <Content Include="Content\assets\svg\icons\header\notification.svg" />
+    <Content Include="Content\assets\svg\icons\header\phone.svg" />
+    <Content Include="Content\assets\svg\icons\header\search.svg" />
+    <Content Include="Content\assets\svg\icons\header\ticket.svg" />
+    <Content Include="Content\assets\svg\icons\header\user.svg" />
+    <Content Include="Content\assets\svg\icons\map_search.svg" />
+    <Content Include="Content\assets\svg\icons\news\cheapPrice.svg" />
+    <Content Include="Content\assets\svg\icons\news\customer.svg" />
+    <Content Include="Content\assets\svg\icons\news\HotelBig.svg" />
+    <Content Include="Content\assets\svg\icons\news\HotelSmall.svg" />
+    <Content Include="Content\assets\svg\icons\news\map.svg" />
+    <Content Include="Content\assets\svg\icons\news\newsAndPromotions.svg" />
+    <Content Include="Content\assets\svg\icons\news\planeBig.svg" />
+    <Content Include="Content\assets\svg\icons\news\price.svg" />
+    <Content Include="Content\assets\svg\icons\news\vietnamAirlines.svg" />
+    <Content Include="Content\assets\svg\icons\next.svg" />
+    <Content Include="Content\assets\svg\icons\packing.svg" />
+    <Content Include="Content\assets\svg\icons\planeSmall.svg" />
+    <Content Include="Content\assets\svg\icons\plane_search.svg" />
+    <Content Include="Content\assets\svg\icons\previus.svg" />
+    <Content Include="Content\assets\svg\icons\round-trip.svg" />
+    <Content Include="Content\assets\svg\icons\starheck.svg" />
+    <Content Include="Content\assets\svg\icons\starnone.svg" />
+    <Content Include="Content\assets\svg\icons\user_search.svg" />
+    <Content Include="Content\assets\svg\logoLight.svg" />
+    <Content Include="Content\assets\svg\motchieu.svg" />
+    <Content Include="Content\assets\svg\vietnamairlines.svg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -146,12 +334,47 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\assets\fonts\manrope-bold.otf" />
+    <Content Include="Content\assets\fonts\manrope-extrabold.otf" />
+    <Content Include="Content\assets\fonts\manrope-light.otf" />
+    <Content Include="Content\assets\fonts\manrope-medium.otf" />
+    <Content Include="Content\assets\fonts\manrope-regular.otf" />
+    <Content Include="Content\assets\fonts\manrope-semibold.otf" />
+    <Content Include="Content\assets\fonts\manrope-thin.otf" />
+    <Content Include="bin\ECommerceTicket2.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -174,13 +397,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Flight.cshtml" />
+    <Content Include="Views\Home\FlightList.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\FlightPayment.cshtml" />
+    <Content Include="Views\Home\FlightPayment1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="obj\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -208,6 +433,9 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -242,7 +470,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
